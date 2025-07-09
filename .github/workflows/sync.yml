@@ -90,7 +90,7 @@ jobs:
           git push origin HEAD:sync-upstream-${{ steps.latest_upstream.outputs.latest_tag }}
 
       - name: Create PR
-        uses: peter-evans/create-pull-request@v6
+        uses: peter-evans/create-pull-request@v7
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           branch: sync-upstream-${{ steps.latest_upstream.outputs.latest_tag }}

@@ -9608,6 +9608,67 @@
             ]
         },
         {
+            "pakku_id": "IaNjixC9jfe0gewf",
+            "type": "MOD",
+            "side": "BOTH",
+            "slug": {
+                "curseforge": "jei",
+                "modrinth": "jei"
+            },
+            "name": {
+                "curseforge": "Just Enough Items (JEI)",
+                "modrinth": "Just Enough Items"
+            },
+            "id": {
+                "curseforge": "238222",
+                "modrinth": "u6dRKJwZ"
+            },
+            "files": [
+                {
+                    "type": "modrinth",
+                    "file_name": "jei-1.20.1-forge-15.20.0.116.jar",
+                    "mc_versions": [
+                        "1.20.1"
+                    ],
+                    "loaders": [
+                        "forge"
+                    ],
+                    "release_type": "beta",
+                    "url": "https://cdn.modrinth.com/data/u6dRKJwZ/versions/zzpNSbJZ/jei-1.20.1-forge-15.20.0.116.jar",
+                    "id": "zzpNSbJZ",
+                    "parent_id": "u6dRKJwZ",
+                    "hashes": {
+                        "sha512": "4a5337e8f8234e7053c8ad9c9f4f4aaf08ee03f66fea8146e9b5b2e357a8b892540b3b1dfefc73b618b9fa485c7c025481f9d17fb9f522a76839e499f8816741",
+                        "sha1": "ebb8d9033c29538824281b3ac651c49135aba78e"
+                    },
+                    "required_dependencies": [],
+                    "size": 1387236,
+                    "date_published": "2025-09-27T01:04:56.593434Z"
+                },
+                {
+                    "type": "curseforge",
+                    "file_name": "jei-1.20.1-forge-15.20.0.116.jar",
+                    "mc_versions": [
+                        "1.20.1"
+                    ],
+                    "loaders": [
+                        "forge"
+                    ],
+                    "release_type": "beta",
+                    "url": "https://edge.forgecdn.net/files/7037/120/jei-1.20.1-forge-15.20.0.116.jar",
+                    "id": "7037120",
+                    "parent_id": "238222",
+                    "hashes": {
+                        "sha1": "ebb8d9033c29538824281b3ac651c49135aba78e",
+                        "md5": "89817a7201d47a7a23c3f9d217f891f4"
+                    },
+                    "required_dependencies": [],
+                    "size": 1387236,
+                    "date_published": "2025-09-27T01:04:44.357Z"
+                }
+            ]
+        },
+        {
             "pakku_id": "NZy1xTZhTOBxDiDt",
             "type": "MOD",
             "side": "CLIENT",

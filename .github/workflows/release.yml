@@ -2,6 +2,8 @@ name: Create Release
 on:
   workflow_dispatch:
   push:
+    branches:
+      - main
     tags:
       - "*-shelf*"
 permissions:
@@ -139,15 +141,15 @@ jobs:
           LOADER_VERSION=${{ needs.info.outputs.loader_version }}
           LOADER_TYPE=${{ needs.info.outputs.loader_type }}
           MINECRAFT_VERSION=${{ needs.info.outputs.mc_version }}
-          sed -i -e "s/DEV/${VERSION}/g" pakku.json
-          sed -i -e "s/DEV/${VERSION}/g" config/fancymenu/customization/gui_main_menu.txt
-          sed -i -e "s/DEV/${VERSION}/g" .pakku/multimc-overrides/instance.cfg
-          sed -i -e "s/LOADER_VERSION/${LOADER_VERSION}/g" .pakku/multimc-overrides/mmc-pack.json
-          sed -i -e "s/LOADER_TYPE/${LOADER_TYPE}/g" .pakku/multimc-overrides/mmc-pack.json
-          sed -i -e "s/MINECRAFT_VERSION/${MINECRAFT_VERSION}/g" .pakku/multimc-overrides/mmc-pack.json
-          sed -i -e "s/LOADER_VERSION/${LOADER_VERSION}/g" .pakku/server-overrides/forge-auto-install.txt
-          sed -i -e "s/LOADER_TYPE/${LOADER_TYPE}/g" .pakku/server-overrides/forge-auto-install.txt
-          sed -i -e "s/MINECRAFT_VERSION/${MINECRAFT_VERSION}/g" .pakku/server-overrides/forge-auto-install.txt
+          sed -i -e "s#DEV#${VERSION}#g" pakku.json
+          sed -i -e "s#DEV#${VERSION}#g" config/fancymenu/customization/gui_main_menu.txt
+          sed -i -e "s#DEV#${VERSION}#g" .pakku/multimc-overrides/instance.cfg
+          sed -i -e "s#LOADER_VERSION#${LOADER_VERSION}#g" .pakku/multimc-overrides/mmc-pack.json
+          sed -i -e "s#LOADER_TYPE#${LOADER_TYPE}#g" .pakku/multimc-overrides/mmc-pack.json
+          sed -i -e "s#MINECRAFT_VERSION#${MINECRAFT_VERSION}#g" .pakku/multimc-overrides/mmc-pack.json
+          sed -i -e "s#LOADER_VERSION#${LOADER_VERSION}#g" .pakku/server-overrides/forge-auto-install.txt
+          sed -i -e "s#LOADER_TYPE#${LOADER_TYPE}#g" .pakku/server-overrides/forge-auto-install.txt
+          sed -i -e "s#MINECRAFT_VERSION#${MINECRAFT_VERSION}#g" .pakku/server-overrides/forge-auto-install.txt
       - name: Cache pakku
         uses: actions/cache@v4.2.4
         id: cache
@@ -208,8 +210,61 @@ jobs:
           name: ${{ needs.info.outputs.project_full_name }}-serverpack
           path: ./build/serverpack/${{ needs.info.outputs.project_full_name }}-serverpack.zip
           if-no-files-found: error
+  prerelease-artifacts:
+    name: Prerelease Artifacts
+    if: |
+      github.event_name == 'push' &&
+      (github.ref == 'refs/heads/dev' || github.ref == 'refs/heads/main') &&
+      !startsWith(github.ref, 'refs/tags/')
+    needs: [info, build-project]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download artifact
+        uses: actions/download-artifact@v5.0.0
+        with:
+          merge-multiple: true
+      - name: Check if artifact exist
+        id: check_artifact
+        shell: bash
+        run: |
+          if [ ! -f ${{ needs.info.outputs.project_full_name }}-curseforge.zip ]; then
+            echo 'No value found for artifact curseforge.zip.' && exit 1
+          fi
+          if [ ! -f ${{ needs.info.outputs.project_full_name }}-serverpack.zip ]; then
+            echo 'No value found for artifact serverpack.zip.' && exit 1
+          fi
+          if [ ! -f ${{ needs.info.outputs.project_full_name }}-multimc.zip ]; then
+            echo 'No value found for artifact multimc.zip.' && exit 1
+          fi
+      - name: Upload prerelease artifact CurseForge
+        uses: actions/upload-artifact@v4.6.2
+        with:
+          name: prerelease-${{ needs.info.outputs.project_full_name }}-curseforge
+          path: ./build/curseforge/${{ needs.info.outputs.project_full_name }}-curseforge.zip
+          if-no-files-found: error
+      - name: Upload prerelease artifact modrinth
+        uses: actions/upload-artifact@v4.6.2
+        with:
+          name: prerelease-${{ needs.info.outputs.project_full_name }}-modrinth
+          path: ./build/modrinth/${{ needs.info.outputs.project_full_name }}-modrinth.mrpack
+          if-no-files-found: warn
+      - name: Upload prerelease artifact multimc
+        uses: actions/upload-artifact@v4.6.2
+        with:
+          name: prerelease-${{ needs.info.outputs.project_full_name }}-multimc
+          path: ./build/multimc/${{ needs.info.outputs.project_full_name }}-multimc.zip
+          if-no-files-found: error
+      - name: Upload prerelease artifact server
+        uses: actions/upload-artifact@v4.6.2
+        with:
+          name: prerelease-${{ needs.info.outputs.project_full_name }}-serverpack
+          path: ./build/serverpack/${{ needs.info.outputs.project_full_name }}-serverpack.zip
+          if-no-files-found: error
   release-github:
     name: Release to GitHub
+    if: |
+      github.event_name == 'push' &&
+      startsWith(github.ref, 'refs/tags/')
     needs: [info, build-project]
     runs-on: ubuntu-latest
     steps:
@@ -238,6 +293,13 @@ jobs:
           TAG="${{ needs.info.outputs.project_version }}"
           DATE=$(date +'%Y-%m-%d')
           echo "title=Release $TAG ($DATE)" >> $GITHUB_OUTPUT
+      - name: Sanitize changelog
+        id: sanitize_changelog
+        run: |
+          echo "${{ needs.info.outputs.changelog }}" | sed -E 's/@([a-zA-Z0-9_-]+)/`@\1`/g' > sanitized_changelog.md
+          echo "sanitized<<EOF" >> $GITHUB_OUTPUT
+          cat sanitized_changelog.md >> $GITHUB_OUTPUT
+          echo "EOF" >> $GITHUB_OUTPUT
       - name: Create release
         id: release
         uses: softprops/action-gh-release@v2.3.3
@@ -245,16 +307,8 @@ jobs:
           name: ${{ steps.release_title.outputs.title }}
           tag_name: ${{ needs.info.outputs.project_version }}
           body: |
-            ${{ needs.info.outputs.changelog }}
+            ${{ steps.sanitize_changelog.outputs.sanitized }}
             ${{ needs.info.outputs.diff }}
-          env:
-            # Prevent accidental GitHub mentions in changelog
-            # Replace @username with `@username`
-            CLEAN_CHANGELOG: ${{ needs.info.outputs.changelog }}
-          shell: bash
-          run: |
-            SANITIZED_CHANGELOG=$(echo "$CLEAN_CHANGELOG" | sed -E 's/@([a-zA-Z0-9_-]+)/`@\1`/g')
-            echo "$SANITIZED_CHANGELOG" > sanitized_changelog.md
           files: |
             ${{ needs.info.outputs.project_full_name }}-curseforge.zip
             ${{ needs.info.outputs.project_full_name }}-modrinth.mrpack

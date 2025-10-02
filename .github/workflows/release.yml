@@ -247,6 +247,14 @@ jobs:
           body: |
             ${{ needs.info.outputs.changelog }}
             ${{ needs.info.outputs.diff }}
+          env:
+            # Prevent accidental GitHub mentions in changelog
+            # Replace @username with `@username`
+            CLEAN_CHANGELOG: ${{ needs.info.outputs.changelog }}
+          shell: bash
+          run: |
+            SANITIZED_CHANGELOG=$(echo "$CLEAN_CHANGELOG" | sed -E 's/@([a-zA-Z0-9_-]+)/`@\1`/g')
+            echo "$SANITIZED_CHANGELOG" > sanitized_changelog.md
           files: |
             ${{ needs.info.outputs.project_full_name }}-curseforge.zip
             ${{ needs.info.outputs.project_full_name }}-modrinth.mrpack

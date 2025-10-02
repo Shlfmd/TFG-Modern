@@ -124,7 +124,13 @@ jobs:
           echo "minecraft_version=$MINECRAFT_VERSION" >> $GITHUB_OUTPUT
           echo "loader_version=$LOADER_VERSION" >> $GITHUB_OUTPUT
           echo "loader_type=$LOADER_TYPE" >> $GITHUB_OUTPUT
-          echo "project_version=${GITHUB_REF#refs/tags/}" >> $GITHUB_OUTPUT
+
+          if [[ "${GITHUB_REF}" == refs/tags/* ]]; then
+            VERSION="${GITHUB_REF#refs/tags/}"
+          else
+            VERSION="build-${GITHUB_RUN_NUMBER}-${GITHUB_SHA:0:7}"
+          fi
+          echo "project_version=$VERSION" >> $GITHUB_OUTPUT
           echo "project_name=${{ steps.pakku_info.outputs.name }}" >> $GITHUB_OUTPUT
           echo "release_type=${{ steps.pakku_info.outputs.release_type }}" >> $GITHUB_OUTPUT
   build-project:

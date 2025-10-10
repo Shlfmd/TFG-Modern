@@ -7758,67 +7758,6 @@
             ]
         },
         {
-            "pakku_id": "77DhkbtiDh52yy00",
-            "type": "MOD",
-            "side": "BOTH",
-            "slug": {
-                "curseforge": "forgified-fabric-api",
-                "modrinth": "forgified-fabric-api"
-            },
-            "name": {
-                "curseforge": "Forgified Fabric API",
-                "modrinth": "Forgified Fabric API"
-            },
-            "id": {
-                "curseforge": "889079",
-                "modrinth": "Aqlf1Shp"
-            },
-            "files": [
-                {
-                    "type": "curseforge",
-                    "file_name": "fabric-api-0.92.6+1.11.14+1.20.1.jar",
-                    "mc_versions": [
-                        "1.20.1"
-                    ],
-                    "loaders": [
-                        "forge"
-                    ],
-                    "release_type": "release",
-                    "url": "https://edge.forgecdn.net/files/6885/853/fabric-api-0.92.6+1.11.14+1.20.1.jar",
-                    "id": "6885853",
-                    "parent_id": "889079",
-                    "hashes": {
-                        "sha1": "285c22b2567b9fdf98ef9808eceb5557de9611d3",
-                        "md5": "2859d401e221e94acf0b48c5f7efa50b"
-                    },
-                    "required_dependencies": [],
-                    "size": 3065813,
-                    "date_published": "2025-08-14T14:02:34.270Z"
-                },
-                {
-                    "type": "modrinth",
-                    "file_name": "fabric-api-0.92.6+1.11.14+1.20.1.jar",
-                    "mc_versions": [
-                        "1.20.1"
-                    ],
-                    "loaders": [
-                        "forge"
-                    ],
-                    "release_type": "release",
-                    "url": "https://cdn.modrinth.com/data/Aqlf1Shp/versions/XweDEycJ/fabric-api-0.92.6+1.11.14+1.20.1.jar",
-                    "id": "XweDEycJ",
-                    "parent_id": "Aqlf1Shp",
-                    "hashes": {
-                        "sha512": "3b84ea415d9255861bcbf78cfda3987b78aa452361bf44ba6a0223501a25ab5c5c55cb0eac6f460c88b8cec958f2b59211e488277c26e3432a08196f62049e7c",
-                        "sha1": "285c22b2567b9fdf98ef9808eceb5557de9611d3"
-                    },
-                    "required_dependencies": [],
-                    "size": 3065813,
-                    "date_published": "2025-08-14T14:02:39.244165Z"
-                }
-            ]
-        },
-        {
             "pakku_id": "5SQ0czDAOB19jrY9",
             "type": "MOD",
             "side": "BOTH",
@@ -10753,70 +10692,6 @@
             ]
         },
         {
-            "pakku_id": "uTdUDWTlenFMxviD",
-            "type": "MOD",
-            "side": "BOTH",
-            "slug": {
-                "curseforge": "midnightlib",
-                "modrinth": "midnightlib"
-            },
-            "name": {
-                "curseforge": "MidnightLib",
-                "modrinth": "MidnightLib"
-            },
-            "id": {
-                "curseforge": "488090",
-                "modrinth": "codAaoxh"
-            },
-            "files": [
-                {
-                    "type": "curseforge",
-                    "file_name": "midnightlib-forge-1.4.2.jar",
-                    "mc_versions": [
-                        "1.20.1",
-                        "1.20"
-                    ],
-                    "loaders": [
-                        "neoforge",
-                        "forge"
-                    ],
-                    "release_type": "beta",
-                    "url": "https://edge.forgecdn.net/files/4980/331/midnightlib-forge-1.4.2.jar",
-                    "id": "4980331",
-                    "parent_id": "488090",
-                    "hashes": {
-                        "sha1": "9c99369a5b703f428dc31f8e4a1a83fc892bba48",
-                        "md5": "d761d868afbde34f6d8a3e6ce5fd9793"
-                    },
-                    "required_dependencies": [],
-                    "size": 62156,
-                    "date_published": "2023-12-24T12:01:44.520Z"
-                },
-                {
-                    "type": "modrinth",
-                    "file_name": "midnightlib-forge-1.4.2.jar",
-                    "mc_versions": [
-                        "1.20",
-                        "1.20.1"
-                    ],
-                    "loaders": [
-                        "forge"
-                    ],
-                    "release_type": "release",
-                    "url": "https://cdn.modrinth.com/data/codAaoxh/versions/UhRAdyzr/midnightlib-forge-1.4.2.jar",
-                    "id": "UhRAdyzr",
-                    "parent_id": "codAaoxh",
-                    "hashes": {
-                        "sha512": "5946159d26c11b2ae2a51c8a4fdca6521d430a22df58fa146f19b2f681e64446ad15a85068b5f6092e1bbc49d9c7def287aebec3aa7d686c2b2949b55a8c5bfa",
-                        "sha1": "9c99369a5b703f428dc31f8e4a1a83fc892bba48"
-                    },
-                    "required_dependencies": [],
-                    "size": 62156,
-                    "date_published": "2023-12-24T11:58:05.938928Z"
-                }
-            ]
-        },
-        {
             "pakku_id": "vLkSeib1zFzTMcPF",
             "type": "MOD",
             "side": "BOTH",
@@ -13250,47 +13125,6 @@
                     "required_dependencies": [],
                     "size": 20450,
                     "date_published": "2024-07-24T23:23:54.183Z"
-                }
-            ]
-        },
-        {
-            "pakku_id": "mFDmO6BxUgRW5hF9",
-            "pakku_links": [
-                "77DhkbtiDh52yy00"
-            ],
-            "type": "MOD",
-            "slug": {
-                "curseforge": "sinytra-connector"
-            },
-            "name": {
-                "curseforge": "Sinytra Connector"
-            },
-            "id": {
-                "curseforge": "890127"
-            },
-            "files": [
-                {
-                    "type": "curseforge",
-                    "file_name": "Connector-1.0.0-beta.46+1.20.1.jar",
-                    "mc_versions": [
-                        "1.20.1"
-                    ],
-                    "loaders": [
-                        "forge"
-                    ],
-                    "release_type": "beta",
-                    "url": "https://edge.forgecdn.net/files/5761/411/Connector-1.0.0-beta.46+1.20.1.jar",
-                    "id": "5761411",
-                    "parent_id": "890127",
-                    "hashes": {
-                        "sha1": "4c65f7cec969cb6c2e39d0b06c9be28e72fe370d",
-                        "md5": "3c07e0a25c1921da7586c0290c72ba86"
-                    },
-                    "required_dependencies": [
-                        "889079"
-                    ],
-                    "size": 5043384,
-                    "date_published": "2024-09-27T11:10:59.270Z"
                 }
             ]
         },
@@ -16383,82 +16217,6 @@
                     "required_dependencies": [],
                     "size": 1631104,
                     "date_published": "2025-10-24T18:08:01.953Z"
-                }
-            ]
-        },
-        {
-            "pakku_id": "Bm2sb2z4Mhvh65EN",
-            "pakku_links": [
-                "mFDmO6BxUgRW5hF9",
-                "77DhkbtiDh52yy00",
-                "uTdUDWTlenFMxviD"
-            ],
-            "type": "MOD",
-            "side": "BOTH",
-            "slug": {
-                "curseforge": "via-romana",
-                "modrinth": "via-romana"
-            },
-            "name": {
-                "curseforge": "Via Romana: Infrastructure-Driven Fast Travel",
-                "modrinth": "Via Romana: Infrastructure-Driven Fast Travel"
-            },
-            "id": {
-                "curseforge": "1026508",
-                "modrinth": "FVToiKwr"
-            },
-            "files": [
-                {
-                    "type": "curseforge",
-                    "file_name": "via_romana-2.0.1+1.20.1-forge.jar",
-                    "mc_versions": [
-                        "1.20.1"
-                    ],
-                    "loaders": [
-                        "neoforge",
-                        "forge"
-                    ],
-                    "release_type": "release",
-                    "url": "https://edge.forgecdn.net/files/7051/29/via_romana-2.0.1+1.20.1-forge.jar",
-                    "id": "7051029",
-                    "parent_id": "1026508",
-                    "hashes": {
-                        "sha1": "bfd30e45453f00288ad3d850ffd95b00eb75569f",
-                        "md5": "0e05e027ac9aefcfa457ed5a25c85f63"
-                    },
-                    "required_dependencies": [
-                        "890127",
-                        "889079",
-                        "488090"
-                    ],
-                    "size": 1897204,
-                    "date_published": "2025-09-30T21:25:46.137Z"
-                },
-                {
-                    "type": "modrinth",
-                    "file_name": "via_romana-2.0.1+1.20.1-forge.jar",
-                    "mc_versions": [
-                        "1.20.1"
-                    ],
-                    "loaders": [
-                        "forge",
-                        "neoforge"
-                    ],
-                    "release_type": "release",
-                    "url": "https://cdn.modrinth.com/data/FVToiKwr/versions/T0SEgiDg/via_romana-2.0.1+1.20.1-forge.jar",
-                    "id": "T0SEgiDg",
-                    "parent_id": "FVToiKwr",
-                    "hashes": {
-                        "sha512": "30482dc7061df0accb6b1ab53f7df08a211cf38fe65fd31fd8d537a1b9a8cf067160ab75d07a35ca9be2a87cd0bf6d8e66f81e3bdd2287254a25c54cc63a4dfe",
-                        "sha1": "bfd30e45453f00288ad3d850ffd95b00eb75569f"
-                    },
-                    "required_dependencies": [
-                        "codAaoxh",
-                        "Aqlf1Shp",
-                        "u58R1TMW"
-                    ],
-                    "size": 1897204,
-                    "date_published": "2025-09-30T21:20:24.125092Z"
                 }
             ]
         },

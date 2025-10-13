@@ -157,7 +157,7 @@ jobs:
           sed -i -e "s#LOADER_TYPE#${LOADER_TYPE}#g" .pakku/server-overrides/forge-auto-install.txt
           sed -i -e "s#MINECRAFT_VERSION#${MINECRAFT_VERSION}#g" .pakku/server-overrides/forge-auto-install.txt
       - name: Cache pakku
-        uses: actions/cache@v4.2.4
+        uses: actions/cache@v4.3.0
         id: cache
         with:
           path: build/.cache
@@ -308,7 +308,7 @@ jobs:
           echo "EOF" >> $GITHUB_OUTPUT
       - name: Create release
         id: release
-        uses: softprops/action-gh-release@v2.3.3
+        uses: softprops/action-gh-release@v2.4.1
         with:
           name: ${{ steps.release_title.outputs.title }}
           tag_name: ${{ needs.info.outputs.project_version }}

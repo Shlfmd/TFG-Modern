@@ -194,7 +194,7 @@ jobs:
       - name: 📄 Format diff
         id: format_diff
         if: ${{ steps.read_diff.outputs.diff != '' }}
-        uses: roamingowl/template-output-with-eta@v1.13.0
+        uses: roamingowl/template-output-with-eta@v2.1.0
         with:
           template: |
             ```markdown
@@ -266,7 +266,7 @@ jobs:
 
       - name: 🔍 Create Pull Request if tag not found
         if: ${{ steps.check_existing_pr.outputs.exists == 'false' }}
-        uses: devops-infra/action-pull-request@v0.6.1
+        uses: devops-infra/action-pull-request@v1.0.2
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           source_branch: dev
@@ -316,7 +316,7 @@ jobs:
           sed -i -e "s/MINECRAFT_VERSION/${MINECRAFT_VERSION}/g" .pakku/server-overrides/forge-auto-install.txt
 
       - name: 📝 Cache pakku
-        uses: actions/cache@v4.2.4
+        uses: actions/cache@v4.3.0
         id: cache
         with:
           path: build/.cache
@@ -338,7 +338,7 @@ jobs:
           mv *.zip $(basename -s .zip *.zip)-curseforge.zip
           
       - name: 🚀 Upload artifact CurseForge
-        uses: actions/upload-artifact@v4.6.2
+        uses: actions/upload-artifact@v5.0.0
         with:
           name: ${{ needs.info.outputs.project_full_name }}-curseforge
           path: ./build/curseforge/${{ needs.info.outputs.project_full_name }}-curseforge.zip
@@ -350,7 +350,7 @@ jobs:
           mv *.mrpack $(basename -s .mrpack *.mrpack)-modrinth.mrpack
 
       - name: 🚀 Upload artifact modrinth
-        uses: actions/upload-artifact@v4.6.2
+        uses: actions/upload-artifact@v5.0.0
         with:
           name: ${{ needs.info.outputs.project_full_name }}-modrinth
           path: ./build/modrinth/${{ needs.info.outputs.project_full_name }}-modrinth.mrpack
@@ -372,7 +372,7 @@ jobs:
           zip -r ${{ needs.info.outputs.project_full_name }}-multimc.zip icon.png mmc-pack.json instance.cfg .minecraft/ flame/
       
       - name: 🚀 Upload artifact multimc
-        uses: actions/upload-artifact@v4.6.2
+        uses: actions/upload-artifact@v5.0.0
         with:
           name: ${{ needs.info.outputs.project_full_name }}-multimc
           path: ./build/multimc/${{ needs.info.outputs.project_full_name }}-multimc.zip
@@ -384,7 +384,7 @@ jobs:
           mv *.zip $(basename -s .zip *.zip)-serverpack.zip
 
       - name: 🚀 Upload artifact server
-        uses: actions/upload-artifact@v4.6.2
+        uses: actions/upload-artifact@v5.0.0
         with:
           name: ${{ needs.info.outputs.project_full_name }}-serverpack
           path: ./build/serverpack/${{ needs.info.outputs.project_full_name }}-serverpack.zip
@@ -403,7 +403,7 @@ jobs:
         uses: actions/checkout@v5.0.0
 
       - name: 📦 Download artifact
-        uses: actions/download-artifact@v5.0.0
+        uses: actions/download-artifact@v6.0.0
         with:
           merge-multiple: true
 
@@ -428,7 +428,7 @@ jobs:
       - name: 📄 Format diff
         id: format_diff
         if: ${{ needs.info.outputs.diff != '' }}
-        uses: roamingowl/template-output-with-eta@v1.13.0
+        uses: roamingowl/template-output-with-eta@v2.1.0
         with:
           template: |
             ```markdown
@@ -437,7 +437,7 @@ jobs:
 
       - name: 🚀 Create release
         id: release
-        uses: softprops/action-gh-release@v2.3.3
+        uses: softprops/action-gh-release@v2.4.1
         with:
           name: ${{ needs.info.outputs.project_version }}
           tag_name: ${{ needs.info.outputs.project_version }}
@@ -471,7 +471,7 @@ jobs:
           fi  
 
       - name: 📦 Download artifact
-        uses: actions/download-artifact@v5.0.0
+        uses: actions/download-artifact@v6.0.0
         with:
           merge-multiple: true
 
@@ -521,7 +521,7 @@ jobs:
             fi  
     
         - name: 📦 Download artifact
-          uses: actions/download-artifact@v5.0.0
+          uses: actions/download-artifact@v6.0.0
           with:
             merge-multiple: true
 

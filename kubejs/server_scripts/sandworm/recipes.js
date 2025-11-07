@@ -11,5 +11,6 @@ const registerSandwormRecipes = (event) => {
 		.itemOutputs('sandworm_mod:thumper')
 		.duration(200)
 		.circuit(10)
-		.EUt(GTValues.VA[GTValues.EV]*2);
+		.EUt(GTValues.VA[GTValues.EV])
+		.addMaterialInfo(true);
 }

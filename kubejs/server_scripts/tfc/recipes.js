@@ -106,28 +106,14 @@ const registerTFCRecipes = (event) => {
 		.EUt(7)
 
 	// Доменная печь
-	event.shaped('tfc:blast_furnace', [
+	event.recipes.gtceu.shaped('tfc:blast_furnace', [
 		'AAA',
 		'ABA',
 		'AAA'
 	], {
 		A: '#forge:double_plates/wrought_iron',
 		B: 'tfc:crucible'
-	}).id('tfc:crafting/blast_furnace')
-
-	event.recipes.gtceu.macerator('recycle_tfc_blast_furnace')
-		.itemInputs('tfc:blast_furnace')
-		.itemOutputs(ChemicalHelper.get(TagPrefix.dust, GTMaterials.WroughtIron, 16))
-		.duration(GTMaterials.WroughtIron.getMass() * 16)
-		.EUt(GTValues.VA[GTValues.ULV])
-		.category(GTRecipeCategories.MACERATOR_RECYCLING)
-
-	event.recipes.gtceu.arc_furnace('recycle_tfc_blast_furnace')
-		.itemInputs('tfc:blast_furnace')
-		.itemOutputs(ChemicalHelper.get(TagPrefix.ingot, GTMaterials.WroughtIron, 16))
-		.duration(GTMaterials.WroughtIron.getMass() * 16)
-		.EUt(GTValues.VA[GTValues.LV])
-		.category(GTRecipeCategories.ARC_FURNACE_RECYCLING)
+	}).addMaterialInfo().id('tfc:crafting/blast_furnace')
 
 	// Тыква -> Кусочки тыквы
 	event.recipes.tfc.advanced_shapeless_crafting(
@@ -233,6 +219,13 @@ const registerTFCRecipes = (event) => {
 		.itemOutputs('1x gtceu:fertilizer')
 		.duration(160)
 		.EUt(GTValues.VA[GTValues.ULV])
+
+	event.recipes.gtceu.gas_pressurizer('tfg:pure_nitrogen')
+		.itemInputs('#forge:wax')
+		.inputFluids(Fluid.of('gtceu:nitrogen', 1000))
+		.itemOutputs('16x tfc:pure_nitrogen')
+		.duration(100)
+		.EUt(GTValues.VA[GTValues.LV])
 
 	//Hide Sewing
 	const stages = [
@@ -349,4 +342,12 @@ const registerTFCRecipes = (event) => {
 		ingredients: [{ item: 'tfc:torch' }],
 		result: { item: 'tfc:powder/wood_ash' }
 	}).id(`tfg:ae_transform/torch_to_wood_ash`)
+
+	event.shaped('8x minecraft:ladder', [
+		'A A',
+		'AAA',
+		'A A'
+	], {
+		A: '#tfc:lumber'
+	}).id('tfc:crafting/vanilla/ladder')
 }

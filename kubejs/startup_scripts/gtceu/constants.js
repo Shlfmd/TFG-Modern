@@ -62,6 +62,9 @@ global.GTCEU_DISABLED_ITEMS = /** @type {const} */ ([
     "gtceu:tiny_netherite_dust",
     "gtceu:small_netherite_dust",
     "gtceu:netherite_dust",
+    "gtceu:blaze_bucket",
+    "gtceu:small_blaze_dust",
+    "gtceu:tiny_blaze_dust",
 
     "gtceu:treated_wood_hanging_sign",
     "gtceu:treated_wood_boat",
@@ -192,6 +195,26 @@ global.GTCEU_DISABLED_ITEMS = /** @type {const} */ ([
     "gtceu:mv_bedrock_ore_miner",
     "gtceu:hv_bedrock_ore_miner",
     "gtceu:ev_bedrock_ore_miner",
+
+    // Plutonium ores
+    "gtceu:raw_plutonium",
+    "gtceu:poor_raw_plutonium",
+    "gtceu:rich_raw_plutonium",
+    "gtceu:raw_plutonium_block",
+    "gtceu:refined_plutonium_ore",
+    "gtceu:purified_plutonium_ore",
+    "gtceu:crushed_plutonium_ore",
+    "gtceu:impure_plutonium_dust",
+    "gtceu:pure_plutonium_dust",
+    "gtceu:plutonium_surface_rock",
+
+    // (Normal) thorium bits
+    "gtceu:thorium_nugget",
+    "gtceu:thorium_ingot",
+    "gtceu:thorium_block",
+    "gtceu:thorium_plate",
+    "gtceu:double_thorium_plate",
+    "gtceu:thorium_rod"
 ]);
 //#endregion
 
@@ -307,6 +330,11 @@ global.GTCEU_CASTING_MOLDS = /** @type {const} */ ([
     "gtceu:small_gear_casting_mold",
     "gtceu:rotor_casting_mold",
     "gtceu:pill_casting_mold",
+    "gtceu:tiny_pipe_casting_mold",
+    "gtceu:small_pipe_casting_mold",
+    "gtceu:normal_pipe_casting_mold",
+    "gtceu:large_pipe_casting_mold",
+    "gtceu:huge_pipe_casting_mold",
 ]);
 //#endregion
 
@@ -351,7 +379,19 @@ global.ORE_BEARING_STONES = /** @type {const} */ ([
 /** @global */
 global.ADD_CIRCUIT = /** @type {const} */ ([
     { recipeId: "gtceu:chemical_reactor/tetrafluoroethylene_from_chloroform", circuitNumber: 1 },
+    { recipeId: "gtceu:large_chemical_reactor/tetrafluoroethylene_from_chloroform", circuitNumber: 1 },
+
     { recipeId: "gtceu:chemical_reactor/hydrofluoric_acid_from_elements", circuitNumber: 2 },
+    { recipeId: "gtceu:large_chemical_reactor/hydrofluoric_acid_from_elements", circuitNumber: 2 },
+
+    { recipeId: "gtceu:chemical_reactor/formic_acid", circuitNumber: 1 },
+    { recipeId: "gtceu:large_chemical_reactor/formic_acid", circuitNumber: 1 },
+
+    { recipeId: "gtceu:chemical_reactor/sodium_bicarbonate_from_salt", circuitNumber: 2 },
+    { recipeId: "gtceu:large_chemical_reactor/sodium_bicarbonate_from_salt", circuitNumber: 2 },
+    
+    { recipeId: "gtceu:chemical_reactor/acetic_acid_from_methanol", circuitNumber: 1 },
+    { recipeId: "gtceu:large_chemical_reactor/acetic_acid_from_methanol", circuitNumber: 1 }
 ]);
 //#endregion
 

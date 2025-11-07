@@ -16,6 +16,11 @@ const registerAFCRecipes = (event) => {
 	event.remove({ id: "afc:pot/rubber" })
 	event.remove({ id: "afc:tree_tapping/hevea_latex" })
 	event.remove({ id: "afc:tree_tapping/rubber_fig_latex" })
+	event.remove({ id: "afc:crafting/1_birch_sugar"})
+	event.remove({ id: "afc:crafting/1_maple_sugar"})
+	event.remove({ id: "afc:crafting/0_birch_sugar_bucket"})
+	event.remove({ id: "afc:crafting/0_maple_sugar_bucket"})
+
 
 	// #endregion
 
@@ -58,7 +63,7 @@ const registerAFCRecipes = (event) => {
 
 		event.recipes.gtceu.assembler(`${wood}_pressure_plate`)
 			.itemInputs('#forge:small_springs', `2x afc:wood/planks/${wood}_slab`)
-			.circuit(0)
+			.circuit(3)
 			.itemOutputs(`2x afc:wood/planks/${wood}_pressure_plate`)
 			.duration(50)
 			.EUt(2)
@@ -96,6 +101,7 @@ const registerAFCRecipes = (event) => {
 		.itemOutputs('afc:tree_tap')
 		.duration(50)
 		.EUt(7)
+		.addMaterialInfo(true)
 
 	// TreeTap Heating
 	event.recipes.tfc.heating('afc:tree_tap', 1080)
@@ -181,6 +187,54 @@ const registerAFCRecipes = (event) => {
 		.minTemp(-8)
 		.requiresNaturalLog(true)
 		.id("tfg:tree_tapping/ancient_douglas_fir_resin")
+
+	//Syrups
+	event.remove({ id: "afc:tree_tapping/maple_syrup" })
+	event.remove({ id: "afc:tree_tapping/birch_syrup" })
+
+	event.recipes.afc.tree_tapping(TFC.blockIngredient('tfc:wood/log/maple'))
+		.resultFluid(Fluid.of('afc:maple_sap', 5))
+		.minTemp(-15)
+		.maxTemp(5)
+		.requiresNaturalLog(true)
+		.id("tfg:tree_tapping/maple_log")
+	
+		event.recipes.afc.tree_tapping(TFC.blockIngredient('tfc:wood/log/birch'))
+		.resultFluid(Fluid.of('afc:birch_sap', 5))
+		.minTemp(-15)
+		.maxTemp(5)
+		.requiresNaturalLog(true)
+		.id("tfg:tree_tapping/birch_log")
+
+	// Mars stuff
+
+	event.recipes.afc.tree_tapping(TFC.blockIngredient('beneath:wood/log/crimson'))
+		.resultFluid(Fluid.of('tfg:crimsene', 1))
+		.minTemp(-110)
+		.maxTemp(-15)
+		.requiresNaturalLog(true)
+		.id("tfg:tree_tapping/crimson_log")
+
+	event.recipes.afc.tree_tapping(TFC.blockIngredient('beneath:wood/wood/crimson'))
+		.resultFluid(Fluid.of('tfg:crimsene', 1))
+		.minTemp(-110)
+		.maxTemp(-15)
+		.requiresNaturalLog(true)
+		.id("tfg:tree_tapping/crimson_wood")
+
+	event.recipes.afc.tree_tapping(TFC.blockIngredient('beneath:wood/log/warped'))
+		.resultFluid(Fluid.of('tfg:warpane', 1))
+		.minTemp(-110)
+		.maxTemp(-15)
+		.requiresNaturalLog(true)
+		.id("tfg:tree_tapping/warped_log")
+		
+	event.recipes.afc.tree_tapping(TFC.blockIngredient('beneath:wood/wood/warped'))
+		.resultFluid(Fluid.of('tfg:warpane', 1))
+		.minTemp(-110)
+		.maxTemp(-15)
+		.requiresNaturalLog(true)
+		.id("tfg:tree_tapping/warped_wood")
 
 	//#region Extractor Recipe
 
@@ -336,6 +390,20 @@ const registerAFCRecipes = (event) => {
 		.duration(20*12)
 		.EUt(GTValues.VHA[GTValues.ULV])
 
+
+	// Syrup into sugar
+
+	event.recipes.tfc.barrel_sealed(24000)
+	.inputFluid(Fluid.of('afc:maple_syrup', 100))
+	.outputItem('afc:maple_sugar')
+	.id('tfg:barrel/maple_syrup_to_sugar')
+
+	event.recipes.tfc.barrel_sealed(24000)
+	.inputFluid(Fluid.of('afc:birch_syrup', 100))
+	.outputItem('afc:birch_sugar')
+	.id('tfg:barrel/birch_syrup_to_sugar')
+
+
 	// Stripped logs
 
 	global.AFC_WOOD_TYPES.forEach(wood => {
@@ -366,5 +434,44 @@ const registerAFCRecipes = (event) => {
 			speed_limits: 0,
 			processingTime: 50
 		}).id(`tfg:vi/lathe/stripping_${wood}_wood`)
+	})
+
+	const MORE_STRIPPING = [
+		{ wood: 'black_oak', stripped: 'oak', stripped_mod: 'tfc' },
+		{ wood: 'rainbow_eucalyptus', stripped: 'eucalyptus', stripped_mod: 'afc' },
+		{ wood: 'gum_arabic', stripped: 'acacia', stripped_mod: 'tfc' },
+		{ wood: 'redcedar', stripped: 'cypress', stripped_mod: 'afc' },
+		{ wood: 'rubber_fig', stripped: 'fig', stripped_mod: 'afc' },
+		{ wood: 'poplar', stripped: 'aspen', stripped_mod: 'tfc' }
+	];
+
+	MORE_STRIPPING.forEach(x => {
+		event.recipes.gtceu.lathe(`tfg:stripping_${x.wood}_log`)
+			.itemInputs(`afc:wood/log/${x.wood}`)
+			.itemOutputs(`${x.stripped_mod}:wood/stripped_log/${x.stripped}`)
+			.duration(50)
+			.EUt(2)
+
+		event.recipes.gtceu.lathe(`tfg:stripping_${x.wood}_wood`)
+			.itemInputs(`afc:wood/wood/${x.wood}`)
+			.itemOutputs(`${x.stripped_mod}:wood/stripped_wood/${x.stripped}`)
+			.duration(50)
+			.EUt(2)
+
+		event.custom({
+			type: 'vintageimprovements:polishing',
+			ingredients: [{ item: `afc:wood/log/${x.wood}` }],
+			results: [{ item: `${x.stripped_mod}:wood/stripped_log/${x.stripped}` }],
+			speed_limits: 0,
+			processingTime: 50
+		}).id(`tfg:vi/lathe/stripping_${x.wood}_log`)
+
+		event.custom({
+			type: 'vintageimprovements:polishing',
+			ingredients: [{ item: `afc:wood/wood/${x.wood}` }],
+			results: [{ item: `${x.stripped_mod}:wood/stripped_wood/${x.stripped}` }],
+			speed_limits: 0,
+			processingTime: 50
+		}).id(`tfg:vi/lathe/stripping_${x.wood}_wood`)
 	})
 }

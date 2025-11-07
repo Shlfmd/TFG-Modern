@@ -21,10 +21,11 @@
 		[
 			"tfc:erosion"
 		],
-		"#tfg:mars_craters",
+		[],
 		[
 			"tfg:mars/terrain/spice_disc",
-			"tfg:mars/terrain/red_quicksand"
+			"tfg:mars/terrain/red_quicksand",
+			"tfg:mars/terrain/powder_snow"
 		],
 		[],
 		[],
@@ -33,13 +34,15 @@
 		"#tfg:mars_underground_decoration",
 		[
 			"tfg:mars/surface/small_skull_and_bones",
-			"tfg:mars/surface/large_skull_and_bones"
+			"tfg:mars/surface/large_skull_and_bones",
+			"tfg:mars/surface/pile_hematitic_sand",
+			"tfg:mars/surface/pile_red_sand",
+			"tfg:mars/surface/pile_mars_sand"
 		],
+		[],
 		[
-
-		],
-		[
-			"tfg:glow_lichen"
+			"tfg:glow_lichen",
+			"tfg:mars/terrain/mars_poles"
 		]
 	],
 	"has_precipitation": false,

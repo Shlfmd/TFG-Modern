@@ -7,13 +7,13 @@
  */
 const registerTFGItems = (event) => {
 
-	registerTFGDeprecatedItems(event)
 	registerTFGFoodItems(event)
 
 	// #region Electronics
 	event.create('tfg:unfinished_electron_tube', 'create:sequenced_assembly')
 	event.create('tfg:unfinished_vacuum_tube', 'create:sequenced_assembly')
 	event.create('tfg:unfinished_basic_electronic_circuit', 'create:sequenced_assembly')
+	event.create('tfg:unfinished_good_electronic_circuit', 'create:sequenced_assembly')
 	event.create('tfg:unfinished_inscriber_accumulation_press')
 	event.create('tfg:vitrified_pearl')
 	event.create('tfg:cryo_fluix_pearl')
@@ -28,6 +28,7 @@ const registerTFGItems = (event) => {
 	event.create('tfg:marker/mars_orbit').tag('c:hidden_from_recipe_viewers')
 	event.create('tfg:marker/venus_orbit').tag('c:hidden_from_recipe_viewers')
 	event.create('tfg:marker/mercury_orbit').tag('c:hidden_from_recipe_viewers')
+	event.create('tfg:marker/glacio_orbit').tag('c:hidden_from_recipe_viewers')
 
 	global.AD_ASTRA_WOOD.forEach(wood => {
 		event.create(`tfg:wood/lumber/${wood.name}`)
@@ -257,6 +258,7 @@ const registerTFGItems = (event) => {
 	event.create('tfg:stainless_steel_needle')
 		.translationKey('item.tfg.stainless_steel_needle')
 		.unstackable()
+		.maxDamage(9999)
 
 	//Fishing Nets
 	event.create('tfg:fishing_net/wood')
@@ -453,5 +455,91 @@ const registerTFGItems = (event) => {
 	event.create('tfg:linen_cloth')
 		.tag('forge:cloth')
 		.tag('tfc:sewing_light_cloth')
+
+	event.create('tfg:flax_bundle')
+		.tag('tfc:scrapable')
+		.translationKey('item.tfg.flax_bundle')
+		.texture('tfg:item/flax_bundle')
+	
+	event.create('tfg:bundled_scraped_flax')
+		.tag('tfc:scrapable')
+		.translationKey('item.tfg.bundled_scraped_flax')
+		.texture('tfg:item/bundled_scraped_flax')	
+
+	//#region Lab Equipment
+
+	global.LAB_EQUIPMENT_CONTAINERS.forEach((item) => {
+		event.create(`tfg:${item.type}`, 'tfc:glass_bottle')
+			.fluidTagAccept('tfc:usable_in_blue_steel_bucket')
+			.capacity(item.capacity)
+			.translationKey(`item.tfg.lab_equipment.${item.type}`)
+			.tag('tfg:lab_equipment_containers')
+			.tag('tfc:fluid_item_ingredient_empty_containers')
+			.tag('tfc:glass_bottles')
+	})
+
+	event.create('tfg:lab_equipment')
+		.translationKey('item.tfg.lab_equipment.lab_equipment')
+		.tooltip(Text.translatable('tfg.tooltip.lab_equipment.set'))
+
+	event.create('tfg:dirty_lab_equipment')
+		.translationKey('item.tfg.lab_equipment.dirty_lab_equipment')
+		.tooltip(Text.translatable('tfg.tooltip.lab_equipment.set_dirty'))
+	//#endregion
+
+	// Empty Fission Rod
+
+	event.create('tfg:empty_rod')
+		.translationKey('item.tfg.empty_road')
+		.texture('tfg:item/fuel_rod_empty')
+		.tag('tfg:fission_rods')
+
+	event.create('tfg:refrigerant_pellet')
+		.translationKey('item.tfg.refrigerant_pellet')
+		.texture('tfg:item/refrigerant_pellet')
+		.tag('tfg:fission_coolant')
+
+	// Moderator Line
+
+	event.create('tfg:graphite_compound')
+		.translationKey('item.tfg.graphite_compound')
+		.texture('tfg:item/graphite_line/graphite_compound')
+
+	event.create('tfg:raw_graphite_briquette')
+		.translationKey('item.tfg.raw_graphite_briquette')
+		.texture('tfg:item/graphite_line/raw_graphite_briquette')
+
+	event.create('tfg:faulty_graphite_briquette')
+		.translationKey('item.tfg.faulty_graphite_briquette')
+		.texture('tfg:item/graphite_line/faulty_graphite_briquette')
+
+	event.create('tfg:washed_graphite_briquette')
+		.translationKey('item.tfg.washed_graphite_briquette')
+
+	event.create('tfg:pure_graphite_rod')
+		.translationKey('item.tfg.pure_graphite_rod')
+		.texture('tfg:item/graphite_line/pure_graphite_rod')
+
+	event.create('tfg:impure_graphite_rod')
+		.translationKey('item.tfg.impure_graphite_rod')
+		.texture('tfg:item/graphite_line/impure_graphite_rod')
+
+	event.create('tfg:annealed_graphite_rod')
+		.translationKey('item.tfg.annealed_graphite_rod')
+
+	event.create('tfg:impure_annealed_graphite_rod')
+		.translationKey('item.tfg.impure_annealed_graphite_rod')
+
+	event.create('tfg:graphite_moderator')
+		.translationKey('item.tfg.graphite_moderator')
+		.texture('tfg:item/graphite_line/graphite_moderator')
+
+	event.create('tfg:impure_graphite_moderator')
+		.translationKey('item.tfg.impure_graphite_moderator')
+		.texture('tfg:item/graphite_line/impure_graphite_moderator')
+
+	event.create('tfg:advanced_polymer_binder')
+		.translationKey('item.tfg.advanced_polymer_binder')
+		.texture('tfg:item/graphite_line/advanced_polymer_binder')
 
 }

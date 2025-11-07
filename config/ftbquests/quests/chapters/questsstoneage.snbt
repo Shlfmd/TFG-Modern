@@ -517,6 +517,8 @@
 			]
 			description: ["{quests.stone_age.iron_flask.desc}"]
 			id: "11C45DBB20ED7647"
+			optional: true
+			shape: "heart"
 			subtitle: "{quests.stone_age.iron_flask.subtitle}"
 			tasks: [{
 				id: "6D628C84743356F0"
@@ -656,6 +658,7 @@
 		{
 			dependencies: ["45A09AD0043FF92B"]
 			description: ["{quests.metal_age.copper_anvil.desc}"]
+			guide_page: "tfc:field_guide tfc:mechanics/anvils"
 			id: "48A8E3210B2BAE1C"
 			shape: "gear"
 			size: 4.0d
@@ -1251,6 +1254,7 @@
 		{
 			dependencies: ["193F214E9F154980"]
 			description: ["{quests.stone_age.quern.desc}"]
+			guide_page: "tfc:field_guide tfc:mechanics/quern"
 			id: "5E186CD5E83BFDF0"
 			subtitle: "{quests.stone_age.quern.subtitle}"
 			tasks: [
@@ -1365,6 +1369,7 @@
 				"{quests.stone_age.hazards.desc.2}"
 				"{image:tfg:textures/quests/supported_mine.png width:100 height:100 align:center}"
 			]
+			guide_page: "tfc:field_guide tfc:mechanics/support_beams"
 			icon: "createdeco:decal_warning"
 			id: "618090A6D0D3B2F1"
 			shape: "diamond"
@@ -1565,6 +1570,7 @@
 			dependencies: ["4C444814F1C7B600"]
 			dependency_requirement: "one_completed"
 			description: ["{quests.stone_age.inventory.desc}"]
+			guide_page: "tfc:field_guide tfc:tfg_tips/inventory_management"
 			id: "61B15F0C9B4B647F"
 			subtitle: "{quests.stone_age.inventory.subtitle}"
 			tasks: [
@@ -1701,6 +1707,7 @@
 			dependencies: ["560B17BFBE8D477D"]
 			description: ["{quests.stone_age.leather_armor.desc}"]
 			id: "04E900CFE39D6A6C"
+			optional: true
 			subtitle: "{quests.stone_age.leather_armor.subtitle}"
 			tasks: [
 				{
@@ -1816,12 +1823,12 @@
 		{
 			dependencies: ["1D40CAE675C4BB91"]
 			description: ["{quests.stone_age.water_bucket.desc}"]
+			icon: "minecraft:water_bucket"
 			id: "1F9321F1743A0B79"
 			subtitle: "{quests.stone_age.water_bucket.subtitle}"
 			tasks: [{
-				id: "17FFB1D3212BECEA"
-				item: "minecraft:water_bucket"
-				type: "item"
+				id: "64BE95016DF461FD"
+				type: "checkmark"
 			}]
 			title: "{quests.stone_age.water_bucket.title}"
 			x: 4.5d
@@ -1834,6 +1841,7 @@
 			]
 			description: ["{quests.stone_age.insulated_leather_clothes.desc}"]
 			id: "6D6270D9B2F1EC01"
+			optional: true
 			subtitle: "{quests.stone_age.insulated_leather_clothes.subtitle}"
 			tasks: [
 				{
@@ -1889,6 +1897,7 @@
 			dependencies: ["4521BB8892B386AF"]
 			description: ["{quests.stone_age.wool_clothes.desc}"]
 			id: "1E9033DF269C80DC"
+			optional: true
 			subtitle: "{quests.stone_age.wool_clothes.subtitle}"
 			tasks: [
 				{
@@ -1944,6 +1953,7 @@
 			dependencies: ["4521BB8892B386AF"]
 			description: ["{quests.stone_age.burlap_clothes.desc}"]
 			id: "1602438D9FCADA5E"
+			optional: true
 			subtitle: "{quests.stone_age.burlap_clothes.subtitle}"
 			tasks: [
 				{
@@ -1999,6 +2009,7 @@
 			dependencies: ["4521BB8892B386AF"]
 			description: ["{quests.stone_age.silk_clothes.desc}"]
 			id: "37108D618CF60730"
+			optional: true
 			subtitle: "{quests.stone_age.silk_clothes.subtitle}"
 			tasks: [
 				{

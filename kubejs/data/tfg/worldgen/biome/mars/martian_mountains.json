@@ -22,7 +22,7 @@
 		[
 			"tfc:erosion"
 		],
-		"#tfg:mars_craters",
+		[],
 		[
 			"tfg:mars/terrain/venus_sand_disc",
 			"tfg:mars/terrain/basalt_delta",
@@ -186,9 +186,9 @@
 				"weight": 100
 			},
 			{
-				"type": "wan_ancient_beasts:surfer",
-				"maxCount": 3,
-				"minCount": 2,
+				"type": "tfg:surfer",
+				"maxCount": 2,
+				"minCount": 1,
 				"weight": 100
 			}
 		]

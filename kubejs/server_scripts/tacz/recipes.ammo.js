@@ -2,6 +2,26 @@
 
 function registerTACZAmmoRecipes(event){
 	
+	//Ammo Boxes
+	event.recipes.gtceu.assembler('tfg_tacz:steel_ab')
+		.itemInputs('4x #forge:double_plates/steel', '16x #forge:screws/steel', '4x #forge:rings/rubber')
+		.itemOutputs(Item.of('tacz:ammo_box', '{Level:0}'))
+		.EUt(GTValues.VA[GTValues.LV])
+		.duration(60)
+		
+	event.recipes.gtceu.assembler('tfg_tacz:magnalium_ab')
+		.itemInputs('4x #forge:double_plates/magnalium', '16x #forge:screws/aluminium', '4x #forge:rings/silicone_rubber')
+		.itemOutputs(Item.of('tacz:ammo_box', '{Level:1}'))
+		.EUt(GTValues.VA[GTValues.MV])
+		.duration(60)
+		
+	event.recipes.gtceu.assembler('tfg_tacz:desh_ab')
+		.itemInputs('4x #forge:double_plates/desh', '16x #forge:screws/stainless_steel', '4x #forge:rings/styrene_butadiene_rubber')
+		.itemOutputs(Item.of('tacz:ammo_box', '{Level:2}'))
+		.EUt(GTValues.VA[GTValues.HV])
+		.duration(60)
+	
+	
 	//Extruder Casing
 	event.recipes.gtceu.extruder('tfg_tacz:small_casing')
 		.itemInputs('#forge:ingots/brass')
@@ -117,7 +137,7 @@ function registerTACZAmmoRecipes(event){
 		.EUt(GTValues.VA[GTValues.EV])
 		.duration(20)
 	event.recipes.gtceu.assembler('tfg_tacz:hard_quartz_large')
-		.itemInputs('4x #forge:exquisite_gems/certus_quartz', '8x #forge:bolts/tungsten', '4x tfg:large_bullet_casing', 
+		.itemInputs('4x #forge:exquisite_gems/certus_quartz', '4x #forge:rods/titanium', '4x tfg:large_bullet_casing', 
 					'2x tfg:nitrocellulose')
 		.itemOutputs(Item.of('tacz:ammo', 4, 
 					'{AmmoId:"applied_armorer:hard_core_quartz_bullet"}'))

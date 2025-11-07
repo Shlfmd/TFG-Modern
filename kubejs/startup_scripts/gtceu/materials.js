@@ -46,6 +46,8 @@ const registerGTCEuMaterialModification = (event) => {
 		GENERATE_RING,
 		GENERATE_FOIL,
 		GENERATE_FINE_WIRE,
+		NO_ORE_PROCESSING_TAB,
+		NO_ORE_SMELTING
 	} = $MATERIAL_FLAGS
 
 	const metalTooling = [
@@ -183,6 +185,7 @@ const registerGTCEuMaterialModification = (event) => {
 	GTMaterials.Beryllium.addFlags(GENERATE_DUSTY_ORES);
 	GTMaterials.Thorium.addFlags(GENERATE_DUSTY_ORES);
 	GTMaterials.Uraninite.addFlags(GENERATE_DUSTY_ORES);
+	GTMaterials.Hematite.addFlags(GENERATE_DUSTY_ORES);
 
 	//#endregion
 
@@ -265,9 +268,13 @@ const registerGTCEuMaterialModification = (event) => {
 	GTMaterials.DamascusSteel.addFlags(GENERATE_BOLT_SCREW);
 	GTMaterials.Duranium.addFlags(GENERATE_BOLT_SCREW);
 
+	GTMaterials.Magnalium.addFlags(GENERATE_GEAR);
+
 	GTMaterials.Cupronickel.addFlags(GENERATE_BOLT_SCREW, GENERATE_RING);
 
 	GTMaterials.Ultimet.addFlags(GENERATE_ROTOR)
+	
+	GTMaterials.HSLASteel.addFlags(GENERATE_BOLT_SCREW, GENERATE_DENSE)
 	
 	GTMaterials.Invar.addFlags(GENERATE_RING);
 	GTMaterials.Magnalium.addFlags(GENERATE_RING);
@@ -277,13 +284,16 @@ const registerGTCEuMaterialModification = (event) => {
 	GTMaterials.IronMagnetic.addFlags(GENERATE_PLATE)
 
 	GTMaterials.Silicon.addFlags(GENERATE_DENSE);
-
-	GTMaterials.RTMAlloy.addFlags(GENERATE_DENSE);
+	GTMaterials.RTMAlloy.addFlags(GENERATE_DENSE, GENERATE_SPRING);
 	GTMaterials.Lead.addFlags(GENERATE_DENSE);
 
 	GTMaterials.Quartzite.addFlags(GENERATE_ROD);
 	
 	GTMaterials.TreatedWood.addFlags(GENERATE_LONG_ROD);
+
+	// Hide ore processing tab for plutonium
+	GTMaterials.Plutonium239.addFlags(GENERATE_ROD, NO_ORE_PROCESSING_TAB, NO_ORE_SMELTING)
+	GTMaterials.Thorium.addFlags(NO_ORE_SMELTING)
 
 	GTMaterials.Stone.setProperty(PropertyKey.TOOL, ToolProperty.Builder.of(1.2, 1.0, 8, 1, [
 		GTToolType.AXE,
@@ -330,6 +340,12 @@ const registerGTCEuMaterialModification = (event) => {
 	GTMaterials.Galena.setProperty(PropertyKey.HAZARD, new $HAZARD_PROPERTY($HAZARD_PROPERTY.HazardTrigger.INHALATION, GTMedicalConditions.WEAK_POISON, 1, false));
 	GTMaterials.Chromite.setProperty(PropertyKey.HAZARD, new $HAZARD_PROPERTY($HAZARD_PROPERTY.HazardTrigger.SKIN_CONTACT, GTMedicalConditions.IRRITANT, 1, false));
 	GTMaterials.Thorium.setProperty(PropertyKey.HAZARD, new $HAZARD_PROPERTY($HAZARD_PROPERTY.HazardTrigger.ANY, GTMedicalConditions.CARCINOGEN, 1, true));
+	
+	// This contains hazardous elements so GT tags it as hazardous automatically
+	TFGHelpers.getMaterial('ostrum').getProperties().removeProperty(PropertyKey.HAZARD);
+	TFGHelpers.getMaterial('ostrum_iodide').getProperties().removeProperty(PropertyKey.HAZARD);
+	// Superconductors being radioactive at EV is a little evil
+	GTMaterials.UraniumTriplatinum.getProperties().removeProperty(PropertyKey.HAZARD);
 
 	// Make these the lowest tier of EBF instead
 	GTMaterials.BlackSteel.getProperty(PropertyKey.BLAST).setBlastTemperature(1000)
@@ -387,8 +403,11 @@ const registerGTCEuMaterialModification = (event) => {
 	GTMaterials.Platinum.setMaterialSecondaryARGB(0x59563a)
 	GTMaterials.Nickel.setMaterialARGB(0xfff4ba)
 	GTMaterials.Nickel.setMaterialSecondaryARGB(0x8d8d71)
-	GTMaterials.Thorium.setMaterialARGB(0xf8a8c0)
-	GTMaterials.Thorium.setMaterialSecondaryARGB(0xcd8dbc)
+	GTMaterials.Thorium.setMaterialARGB(0xc898a0)
+	GTMaterials.Thorium.setMaterialSecondaryARGB(0xad6d9c)
+	GTMaterials.GraniteRed.setMaterialARGB(0x974B3C)
+	GTMaterials.GraniteRed.setMaterialSecondaryARGB(0x632117)
+	GTMaterials.RhodiumPlatedPalladium.setMaterialARGB(0xFFC2EC)
 
 	
 	global.MINECRAFT_DYE_NAMES.forEach(colorName => {
@@ -408,4 +427,5 @@ const registerGTCEuMaterialModification = (event) => {
 	GTMaterials.get('tfg:tmos').setFormula("Si(OCH3)4", true)
 	GTMaterials.get('tfg:fluix').setFormula("?(?SiO2)(SiO2)", true)
 	GTMaterials.CertusQuartz.setFormula("?SiO2", true)
+	GTMaterials.GraniteRed.setFormula("?", true)
 }

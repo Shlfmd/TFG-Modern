@@ -169,13 +169,13 @@ function generatePlatedBlockRecipe(event, material) {
 	}
 	event.recipes.gtceu.macerator(`tfg:${material.getName()}_plated_block`)
 		.itemInputs(platedBlock)
-		.itemOutputs(ChemicalHelper.get(TagPrefix.dust, material, 1), 'gtceu:stone_dust')
+		.itemOutputs(ChemicalHelper.get(TagPrefix.dust, material, 1))
 		.duration(material.getMass())
 		.category(GTRecipeCategories.MACERATOR_RECYCLING)
 		.EUt(GTValues.VA[GTValues.ULV])
 	event.recipes.gtceu.arc_furnace(`tfg:${material.getName()}_plated_block`)
 		.itemInputs(platedBlock)
-		.itemOutputs(ChemicalHelper.get(TagPrefix.ingot, material, 1), 'gtceu:ash_dust')
+		.itemOutputs(ChemicalHelper.get(TagPrefix.ingot, material, 1))
 		.duration(material.getMass())
 		.category(GTRecipeCategories.ARC_FURNACE_RECYCLING)
 		.EUt(GTValues.VA[GTValues.LV])
@@ -198,13 +198,13 @@ function generatePlatedBlockRecipe(event, material) {
 	}
 	event.recipes.gtceu.macerator(`tfg:${material.getName()}_plated_slab`)
 		.itemInputs(platedSlab)
-		.itemOutputs(ChemicalHelper.get(TagPrefix.dustSmall, material, 2), 'gtceu:small_stone_dust')
+		.itemOutputs(ChemicalHelper.get(TagPrefix.dustSmall, material, 2))
 		.duration(material.getMass())
 		.category(GTRecipeCategories.MACERATOR_RECYCLING)
 		.EUt(GTValues.VA[GTValues.ULV])
 	event.recipes.gtceu.arc_furnace(`tfg:${material.getName()}_plated_slab`)
 		.itemInputs(platedSlab)
-		.itemOutputs(ChemicalHelper.get(TagPrefix.nugget, material, 4), 'gtceu:small_ash_dust')
+		.itemOutputs(ChemicalHelper.get(TagPrefix.nugget, material, 4))
 		.duration(material.getMass())
 		.category(GTRecipeCategories.ARC_FURNACE_RECYCLING)
 		.EUt(GTValues.VA[GTValues.LV])
@@ -226,13 +226,13 @@ function generatePlatedBlockRecipe(event, material) {
 	}
 	event.recipes.gtceu.macerator(`tfg:${material.getName()}_plated_stair`)
 		.itemInputs(platedStair)
-		.itemOutputs(ChemicalHelper.get(TagPrefix.dust, material, 1), 'gtceu:stone_dust')
+		.itemOutputs(ChemicalHelper.get(TagPrefix.dust, material, 1))
 		.duration(material.getMass())
 		.category(GTRecipeCategories.MACERATOR_RECYCLING)
 		.EUt(GTValues.VA[GTValues.ULV])
 	event.recipes.gtceu.arc_furnace(`tfg:${material.getName()}_plated_stair`)
 		.itemInputs(platedStair)
-		.itemOutputs(ChemicalHelper.get(TagPrefix.ingot, material, 1), 'gtceu:ash_dust')
+		.itemOutputs(ChemicalHelper.get(TagPrefix.ingot, material, 1))
 		.duration(material.getMass())
 		.category(GTRecipeCategories.ARC_FURNACE_RECYCLING)
 		.EUt(GTValues.VA[GTValues.LV])
@@ -256,6 +256,10 @@ function forEachMaterial(iterator) {
 //#region Add Circuit
 /**
  * Function for adding circuit numbers for existing recipes
+ * 1) Preserves existing `inputs.item` entries.
+ * 2) Adds a circuit entry to the `inputs.item` array.
+ * 3) If `inputs.item` is missing, create it.
+ * 4) If a circuit already exists, update its number.
  * 
  * Constants {@link global.ADD_CIRCUIT}
  *
@@ -265,23 +269,74 @@ function forEachMaterial(iterator) {
  */
 function addCircuitToRecipe(event, recipeId, circuitNumber) {
 
+	const JsonObject = Java.loadClass('com.google.gson.JsonObject');
+	const JsonArray = Java.loadClass('com.google.gson.JsonArray');
+	const JsonParser = Java.loadClass('com.google.gson.JsonParser');
+	const JsonElementClass = Java.loadClass('com.google.gson.JsonElement');
+
+	// Helper to call JsonArray.add(JsonElement) explicitly because "Rhino Moment".
+	const addJsonElement = (jsonArray, jsonElement) => {
+		jsonArray.getClass().getMethod("add", JsonElementClass).invoke(jsonArray, jsonElement);
+	};
+
 	event.findRecipes({ id: recipeId }).forEach(recipe => {
-			const inputs = recipe.json.get("inputs");
-			const itemArray = inputs.has("item") ? Java.from(inputs.get("item")) : [];
+		let inputsEl = recipe.json.get("inputs");
+		let inputsObj;
+		if (inputsEl === null || inputsEl.isJsonNull()) {
+			inputsObj = new JsonObject();
+		} else if (inputsEl.isJsonObject()) {
+			inputsObj = inputsEl.getAsJsonObject();
+		} else {
+			return;
+		}
 
-			itemArray.push({
-				content: {
-					type: "gtceu:circuit",
-					configuration: circuitNumber
-				},
-				chance: 0,
-				maxChance: 10000,
-				tierChanceBoost: 0
-			});
+		// Cache existing item inputs.
+		let itemEl = inputsObj.get("item");
+		let itemArray;
+		if (itemEl === null || itemEl === undefined || itemEl.isJsonNull()) {
+			itemArray = new JsonArray();
+		} else if (itemEl.isJsonArray()) {
+			itemArray = itemEl.getAsJsonArray();
+		} else if (itemEl.isJsonObject()) {
+			itemArray = new JsonArray();
+			addJsonElement(itemArray, JsonParser.parseString(itemEl.getAsJsonObject().toString()));
+		} else {
+			return;
+		}
 
-			inputs.add("item", itemArray);
-			recipe.json.add("inputs", inputs);
-		});
+		// Build circuit entry as a JsonElement using JsonParser.
+		const circuitElement = JsonParser.parseString(JSON.stringify({
+			content: { type: "gtceu:circuit", configuration: circuitNumber },
+			chance: 0,
+			maxChance: 10000,
+			tierChanceBoost: 0
+		}));
+
+		// Dont duplicate circuit if one already exists. 
+		// If it exists, just update it.
+		let hasCircuit = false;
+		for (let i = 0; i < itemArray.size(); i++) {
+			const el = itemArray.get(i);
+			if (!el.isJsonObject()) continue;
+			const obj = el.getAsJsonObject();
+			const content = obj.get("content");
+			if (content && content.isJsonObject()) {
+				const typeEl = content.getAsJsonObject().get("type");
+				if (typeEl && typeEl.isJsonPrimitive() && typeEl.getAsString() === "gtceu:circuit") {
+					hasCircuit = true;
+					content.getAsJsonObject().addProperty("configuration", circuitNumber);
+					break;
+				}
+			}
+		}
+
+		if (!hasCircuit) {
+			addJsonElement(itemArray, circuitElement);
+		}
+
+		inputsObj.add("item", itemArray);
+		recipe.json.add("inputs", inputsObj);
+	});
 }
 //#endregion
 
@@ -449,10 +504,10 @@ function woodBuilder(event, name, lumber, logs, log, stripped_log, plank, stair,
 		}).id(`tfg:shaped/${name}_pressure_plate`)
 
 		event.recipes.gtceu.assembler(`tfg:assembler/${name}_pressure_plate`)
-			.itemInputs(`2x ${slab}`, '#forge:springs')
+			.itemInputs(`2x ${slab}`, '#forge:small_springs')
 			.itemOutputs(`2x ${pressure_plate}`)
 			.duration(50)
-			.circuit(0)
+			.circuit(3)
 			.EUt(GTValues.VA[GTValues.ULV])
 	}
 
@@ -464,4 +519,69 @@ function woodBuilder(event, name, lumber, logs, log, stripped_log, plank, stair,
 			.EUt(GTValues.VA[GTValues.ULV])
 	}
 }
+//#endregion
+
+//#region Sterilization
+/**
+ * Creates recipes for sterilizing an item using chemicals or the autoclave.
+ *
+ * @param {*} event
+ * @param {string} input - The input item to be sterilized.
+ * @param {string} output - The output item after sterilization.
+ * @param {number} multiplier - Multiplies the fluid amounts and recipe duration. Default multiplier = 1.
+ * @param {string} [cleanroom] - For if a cleanroom is required. Can be null.
+ * 
+ * @throws {TypeError} Throws an error if input, output, or multiplier is invalid.
+ */
+function sterilizeItem(event, input, output, multiplier, cleanroom) {
+    // Collect errors.
+    const errors = [];
+
+	if (input === undefined || (Array.isArray(input) && input.length !== 1) || output === undefined || (Array.isArray(output) && output.length !== 1)) {
+		errors.push("input or output is undefined or not equal to one item");
+	};
+    if (multiplier <= 0) {
+        errors.push(`invalid multiplier (${multiplier})`);
+    };
+
+    // If there are any errors, log them all and throw once.
+    if (errors.length > 0) {
+        const message = "sterilizeItem errors:\n - " + errors.join("\n - ");
+        throw new TypeError(message);
+    };
+
+	// Set default multiplier.
+	let recipe_multiplier = 1;
+	if (multiplier !== undefined) recipe_multiplier = multiplier;
+
+	// Create recipes.
+	let ethanol_recipe = event.recipes.gtceu.chemical_bath(`tfg:ethanol_cleaning/${input.replace(':', '_')}_to_${output.replace(':', '_')}`)
+		.itemInputs(input)
+		.inputFluids(Fluid.of('gtceu:ethanol', 500*recipe_multiplier))
+		.itemOutputs(output)
+		.duration(10*20*recipe_multiplier)
+		.EUt(GTValues.VA[GTValues.MV]);
+
+	let hydrogen_peroxide_recipe = event.recipes.gtceu.chemical_bath(`tfg:hydrogen_peroxide_cleaning/${input.replace(':', '_')}_to_${output.replace(':', '_')}`)
+		.itemInputs(input)
+		.inputFluids(Fluid.of('gtceu:hydrogen_peroxide', 200*recipe_multiplier))
+		.itemOutputs(output)
+		.duration(10*20*recipe_multiplier)
+		.EUt(GTValues.VA[GTValues.MV]);
+
+	let autoclave_recipe = event.recipes.gtceu.autoclave(`tfg:autoclave_cleaning/${input.replace(':', '_')}_to_${output.replace(':', '_')}`)
+		.itemInputs(input)
+		.perTick(true)
+		.inputFluids(Fluid.of('gtceu:steam', 100*recipe_multiplier))
+		.perTick(false)
+		.itemOutputs(output)
+		.duration(240*20*recipe_multiplier)
+		.EUt(GTValues.VA[GTValues.MV]);
+
+	if (cleanroom) {
+		ethanol_recipe.cleanroom(cleanroom);
+		hydrogen_peroxide_recipe.cleanroom(cleanroom);
+		autoclave_recipe.cleanroom(cleanroom);
+	};
+};
 //#endregion

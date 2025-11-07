@@ -23,7 +23,21 @@ function registerTFGHeatData(event) {
 
 	event.itemHeat("tfg:sunflower_product", 1, null, null);
 	event.itemHeat("tfg:roasted_sunflower_seeds", 1, null, null);
-	event.itemHeat("#tfc:powders", 1, null, null);
+	event.itemHeat("tfc:powder/native_copper", 1, null, null);
+	event.itemHeat("tfc:powder/native_silver", 1, null, null);
+	event.itemHeat("tfc:powder/native_gold", 1, null, null);
+	event.itemHeat("tfc:powder/hematite", 1, null, null);
+	event.itemHeat("tfc:powder/cassiterite", 1, null, null);
+	event.itemHeat("tfc:powder/bismuthinite", 1, null, null);
+	event.itemHeat("tfc:powder/garnierite", 1, null, null);
+	event.itemHeat("tfc:powder/malachite", 1, null, null);
+	event.itemHeat("tfc:powder/magnetite", 1, null, null);
+	event.itemHeat("tfc:powder/limonite", 1, null, null);
+	event.itemHeat("tfc:powder/sphalerite", 1, null, null);
+	event.itemHeat("tfc:powder/tetrahedrite", 1, null, null);
+
+	event.itemHeat('betterend:cave_pumpkin_pie_raw', 1.0, null, null);
+    event.itemHeat('betterend:cave_pumpkin_pie', 1.0, null, null);
 }
 
 /** @param {Internal.TFCDataEventJS} event */
@@ -176,6 +190,9 @@ function registerTFGItemSize(event) {
 	event.itemSize("gtceu:large_duct_pipe", "normal", "light", "large_duct_pipe");
 	event.itemSize("gtceu:huge_duct_pipe", "normal", "medium", "huge_duct_pipe");
 
+	// Nuclear Rod
+	event.itemSize(Ingredient.of("#tfg:fission_rods"), "very_large", "heavy");
+
 	// Cables
 	event.itemSize(Ingredient.of("#forge:single_cables").or("#forge:single_wires"), "tiny", "very_light", "cables_1x");
 	event.itemSize(
@@ -260,6 +277,16 @@ function registerTFGItemSize(event) {
 		"very_light",
 		"ae2_small_parts"
 	);
+
+	event.itemSize("tfg:lab_equipment", "normal", "medium", "lab_equipment/lab_equipment");
+	event.itemSize("tfg:dirty_lab_equipment", "normal", "medium", "lab_equipment/dirty_lab_equipment");
+	event.itemSize("gtceu:petri_dish", "tiny", "light", "gtceu/petri_dish");
+
+	// These items don't like to have their size changed for some reason. 
+	// This is the only combination that I could get to work. V
+	event.itemSize("tfg:beaker", "large", "heavy", "tfg/beaker");
+	event.itemSize("tfg:flask", "normal", "medium", "tfg/flask");
+	event.itemSize("tfg:vial", "tiny", "light", "tfg/vial");
 }
 
 //up, down, horizontal
@@ -288,22 +315,22 @@ function registerTFGFoodData(event) {
 	// meats
 
 	event.foodItem("tfg:food/raw_birt", (food) => {
-		food.hunger(4);
-		food.protein(1.5);
+		food.hunger(2);
+		food.protein(1.2);
 		food.decayModifier(3);
 	});
 
 	event.foodItem("tfg:food/cooked_birt", (food) => {
 		food.hunger(4);
 		food.saturation(2);
-		food.protein(2.5);
+		food.protein(2.2);
 		food.decayModifier(2.25);
 	});
 
 	event.foodItem("tfg:food/raw_crawlermari", (food) => {
-		food.hunger(4);
+		food.hunger(2);
 		food.water(5);
-		food.protein(1.1);
+		food.protein(1.2);
 		food.decayModifier(3);
 	});
 
@@ -315,147 +342,206 @@ function registerTFGFoodData(event) {
 	});
 
 	event.foodItem("tfg:food/raw_limpet", (food) => {
-		food.hunger(4);
+		food.hunger(2);
 		food.water(5);
 		food.protein(1.2);
 		food.decayModifier(3);
 	});
 
 	event.foodItem("tfg:food/cooked_limpet", (food) => {
-		food.hunger(5);
+		food.hunger(4);
 		food.saturation(2);
-		food.protein(2.4);
+		food.protein(2.2);
 		food.decayModifier(2.25);
 	});
 
 	event.foodItem("tfg:food/raw_moon_rabbit", (food) => {
-		food.hunger(3);
-		food.protein(2.0);
+		food.hunger(2);
+		food.protein(1.2);
 		food.decayModifier(3);
 	});
 
 	event.foodItem("tfg:food/cooked_moon_rabbit", (food) => {
-		food.hunger(6);
-		food.saturation(2.5);
-		food.protein(5);
+		food.hunger(4);
+		food.saturation(2);
+		food.protein(2.2);
 		food.decayModifier(2.25);
 	});
 
 	event.foodItem("tfg:food/raw_glacian_mutton", (food) => {
-		food.hunger(3);
-		food.protein(2.0);
-		food.decayModifier(3);
-	});
-
-	event.foodItem("tfg:food/cooked_glacian_mutton", (food) => {
-		food.hunger(6);
-		food.saturation(3);
-		food.protein(5);
-		food.decayModifier(1.5);
-	});
-
-	event.foodItem("tfg:food/raw_sniffer_beef", (food) => {
-		food.hunger(3);
-		food.protein(2.0);
-		food.decayModifier(3);
-	});
-
-	event.foodItem("tfg:food/cooked_sniffer_beef", (food) => {
-		food.hunger(6);
-		food.saturation(4);
-		food.protein(7);
-		food.decayModifier(1.5);
-	});
-
-	event.foodItem("tfg:food/raw_wraptor", (food) => {
-		food.hunger(3);
-		food.protein(2.0);
-		food.decayModifier(3);
-	});
-
-	event.foodItem("tfg:food/cooked_wraptor", (food) => {
-		food.hunger(6);
-		food.saturation(4);
-		food.protein(5);
-		food.decayModifier(1.5);
-	});
-
-	event.foodItem("tfg:food/raw_springling_chops", (food) => {
 		food.hunger(2);
 		food.protein(1.5);
 		food.decayModifier(3);
 	});
 
-	event.foodItem("tfg:food/cooked_springling_chops", (food) => {
+	event.foodItem("tfg:food/cooked_glacian_mutton", (food) => {
 		food.hunger(4);
-		food.saturation(3);
-		food.protein(5);
-		food.decayModifier(1.5);
+		food.saturation(2);
+		food.protein(3);
+		food.decayModifier(2.25);
+	});
+
+	event.foodItem("tfg:food/raw_sniffer_beef", (food) => {
+		food.hunger(2);
+		food.protein(1.5);
+		food.decayModifier(3);
+	});
+
+	event.foodItem("tfg:food/cooked_sniffer_beef", (food) => {
+		food.hunger(4);
+		food.saturation(2);
+		food.protein(3);
+		food.decayModifier(2.25);
+	});
+
+	event.foodItem("tfg:food/raw_wraptor", (food) => {
+		food.hunger(2);
+		food.protein(1.5);
+		food.decayModifier(3);
+	});
+
+	event.foodItem("tfg:food/cooked_wraptor", (food) => {
+		food.hunger(4);
+		food.saturation(2);
+		food.protein(3);
+		food.decayModifier(2.25);
+	});
+
+	event.foodItem("tfg:food/raw_springling_collar", (food) => {
+		food.hunger(2);
+		food.protein(1.5);
+		food.decayModifier(3);
+	});
+
+	event.foodItem("tfg:food/cooked_springling_collar", (food) => {
+		food.hunger(4);
+		food.saturation(2);
+		food.protein(3);
+		food.decayModifier(2.25);
+	});
+
+	event.foodItem("tfg:food/raw_surfer_steak", (food) => {
+		food.hunger(2);
+		food.protein(1.5);
+		food.decayModifier(3);
+	});
+
+	event.foodItem("tfg:food/cooked_surfer_steak", (food) => {
+		food.hunger(4);
+		food.saturation(2);
+		food.protein(3);
+		food.decayModifier(2.25);
+	});
+
+	event.foodItem("tfg:food/raw_cruncher_ribs", (food) => {
+		food.hunger(2);
+		food.protein(2.0);
+		food.decayModifier(3);
+	});
+
+	event.foodItem("tfg:food/cooked_cruncher_ribs", (food) => {
+		food.hunger(4);
+		food.saturation(2.2);
+		food.protein(4);
+		food.decayModifier(2.25);
+	});
+
+	event.foodItem("tfg:food/raw_long_pig_filet", (food) => {
+		food.hunger(2);
+		food.protein(1.5);
+		food.decayModifier(3);
+	});
+
+	event.foodItem("tfg:food/cooked_long_pig_filet", (food) => {
+		food.hunger(2);
+		food.saturation(2);
+		food.protein(2);
+		food.decayModifier(2.25);
+	});
+
+	event.foodItem("tfg:food/raw_stackatick_chunks", (food) => {
+		food.hunger(2);
+		food.protein(1.2);
+		food.decayModifier(3);
+	});
+
+	event.foodItem("tfg:food/raw_stickastackatick", (food) => {
+		food.hunger(2);
+		food.protein(1.2);
+		food.decayModifier(3);
+	});
+
+	event.foodItem("tfg:food/cooked_stickastackatick", (food) => {
+		food.hunger(4);
+		food.saturation(2);
+		food.protein(3);
+		food.decayModifier(2.25);
 	});
 
 	event.foodItem("tfg:food/raw_walker_steak", (food) => {
-		food.hunger(3);
+		food.hunger(2);
 		food.protein(2.0);
 		food.decayModifier(3);
 	});
 
 	event.foodItem("tfg:food/cooked_walker_steak", (food) => {
-		food.hunger(6);
-		food.saturation(3);
-		food.protein(8);
-		food.decayModifier(1.5);
+		food.hunger(4);
+		food.saturation(2.2);
+		food.protein(4);
+		food.decayModifier(2.25);
 	});
 
 	event.foodItem("tfg:food/raw_glider_wings", (food) => {
-		food.hunger(1);
+		food.hunger(2);
 		food.protein(1.5);
 		food.decayModifier(3);
 	});
 
 	event.foodItem("tfg:food/cooked_glider_wings", (food) => {
-		food.hunger(3);
-		food.saturation(3);
-		food.protein(3);
-		food.decayModifier(1.5);
+		food.hunger(4);
+		food.saturation(2);
+		food.protein(2.75);
+		food.decayModifier(2.25);
 	});
 
 	event.foodItem("tfg:food/raw_whole_soarer", (food) => {
-		food.hunger(3);
-		food.protein(2.0);
+		food.hunger(2);
+		food.protein(1.5);
 		food.decayModifier(3);
 	});
 
 	event.foodItem("tfg:food/cooked_whole_soarer", (food) => {
-		food.hunger(6);
-		food.saturation(6);
-		food.protein(4);
-		food.decayModifier(1.5);
+		food.hunger(4);
+		food.saturation(2);
+		food.protein(3.1);
+		food.decayModifier(2.25);
 	});
 
 	event.foodItem("tfg:food/raw_crusher_meat", (food) => {
-		food.hunger(3);
+		food.hunger(2);
 		food.protein(1.5);
 		food.decayModifier(3);
 	});
 
 	event.foodItem("tfg:food/cooked_crusher_meat", (food) => {
-		food.hunger(5);
-		food.saturation(6);
-		food.protein(4);
-		food.decayModifier(1.5);
+		food.hunger(4);
+		food.saturation(2);
+		food.protein(3);
+		food.decayModifier(2.25);
 	});
 
 	event.foodItem("tfg:food/raw_goober_meat", (food) => {
 		food.hunger(2);
-		food.protein(3.0);
+		food.protein(1.5);
 		food.decayModifier(3);
+		food.water(1);
 	});
 
 	event.foodItem("tfg:food/cooked_goober_meat", (food) => {
 		food.hunger(4);
-		food.saturation(3);
-		food.protein(6);
-		food.decayModifier(1.5);
+		food.saturation(2);
+		food.protein(3);
+		food.decayModifier(2.25);
 	});
 
 	// high-tech food
@@ -508,7 +594,7 @@ function registerTFGFoodData(event) {
 		food.decayModifier(2);
 		food.saturation(1);
 		food.water(7.5);
-		food.fruit(1.5);
+		food.fruit(2.1);
 	});
 
 	event.foodItem("betterend:cave_pumpkin", (food) => {
@@ -537,11 +623,13 @@ function registerTFGFoodData(event) {
 
 	event.foodItem("betterend:cave_pumpkin_pie", (food) => {
 		food.hunger(4);
-		food.saturation(4);
-		food.decayModifier(2);
+		food.saturation(2.8);
+		food.decayModifier(1.5);
 		food.water(5);
-		food.fruit(4);
-		food.grain(2);
+		food.protein(1);
+		food.fruit(5);
+		food.grain(4);
+		food.dairy(1);
 	});
 
 	event.foodItem("betterend:chorus_mushroom_product", (food) => {
@@ -554,9 +642,9 @@ function registerTFGFoodData(event) {
 
 	event.foodItem("betterend:chorus_mushroom_cooked", (food) => {
 		food.hunger(2);
-		food.saturation(2.5);
+		food.saturation(2.1);
 		food.decayModifier(1.5);
-		food.vegetables(2);
+		food.vegetables(2.5);
 	});
 
 	event.foodItem("betterend:shadow_berry_product", (food) => {
@@ -564,14 +652,14 @@ function registerTFGFoodData(event) {
 		food.decayModifier(2);
 		food.saturation(1);
 		food.water(5);
-		food.fruit(1.5);
+		food.fruit(1.9);
 	});
 
 	event.foodItem("betterend:shadow_berry_cooked", (food) => {
 		food.hunger(5);
 		food.decayModifier(1);
 		food.saturation(2);
-		food.fruit(2);
+		food.fruit(2.2);
 	});
 
 	event.foodItem("betterend:bolux_mushroom_product", (food) => {
@@ -584,9 +672,22 @@ function registerTFGFoodData(event) {
 
 	event.foodItem("betterend:bolux_mushroom_cooked", (food) => {
 		food.hunger(2);
-		food.saturation(2.5);
+		food.saturation(2);
 		food.decayModifier(1.5);
-		food.vegetables(2);
+		food.vegetables(2.4);
+	});
+
+	event.foodItem('tfg:food/raw_dino_nugget', (food) => {
+		food.type("dynamic");
+		food.hunger(1);
+		food.decayModifier(3);
+	});
+
+	event.foodItem('tfg:food/cooked_dino_nugget', (food) => {
+		food.type("dynamic");
+		food.hunger(3);
+		food.saturation(2);
+		food.decayModifier(1.5);
 	});
 
 	// misc
@@ -647,7 +748,7 @@ function registerTFGCropRanges(event) {
 	}, "betterend:amber_root");
 
 	event.climateRange((climate) => {
-		climate.minHydration(0);
+		climate.minHydration(70);
 		climate.maxHydration(100);
 		climate.minTemperature(-80);
 		climate.maxTemperature(30);
@@ -683,7 +784,7 @@ function registerTFGCropRanges(event) {
 	}, "betterend:chorus_mushroom");
 
 	event.climateRange((climate) => {
-		climate.minHydration(0);
+		climate.minHydration(50);
 		climate.maxHydration(100);
 		climate.minTemperature(-80);
 		climate.maxTemperature(30);
@@ -835,8 +936,7 @@ function registerTFGFLPlanters(event) {
 			"betterend:block/cave_pumpkin_greenhouse_2",
 			"betterend:block/cave_pumpkin_greenhouse_3",
 		],
-		//'betterend:block/cave_pumpkin_greenhouse_fruit'
-		"betterend:block/cave_pumpkin_top" // TODO: check
+		"betterend:block/cave_pumpkin_top"
 	);
 
 	event.firmalifePlantable(
@@ -862,9 +962,11 @@ function registerTFGFLPlanters(event) {
 /** @param {Internal.TFCDataEventJS} event */
 function registerTFGFauna(event) {
 
+	// -108 is the average at z=-4k to z=-6k, which feels like a big enough band
 	event.fauna(
 		climate => {
-			climate.maxTemp(-89)
+			climate.maxTemp(-108)
+			climate.fuzzy(false)
 		},
 		faunaData => {
 			faunaData.solidGround(true)
@@ -873,7 +975,7 @@ function registerTFGFauna(event) {
 
 	event.fauna(
 		climate => {
-			climate.minTemp(-85)
+			climate.minTemp(-102)
 			climate.maxTemp(-30)
 			climate.fuzzy(true)
 		},
@@ -884,7 +986,7 @@ function registerTFGFauna(event) {
 
 	event.fauna(
 		climate => {
-			climate.minTemp(-75)
+			climate.minTemp(-100)
 			climate.fuzzy(true)
 		},
 		faunaData => {
@@ -894,7 +996,7 @@ function registerTFGFauna(event) {
 
 	event.fauna(
 		climate => {
-			climate.minTemp(-85)
+			climate.minTemp(-108)
 			climate.fuzzy(true)
 		},
 		faunaData => {
@@ -904,7 +1006,7 @@ function registerTFGFauna(event) {
 
 	event.fauna(
 		climate => {
-			climate.minTemp(-90)
+			climate.minTemp(-109)
 			climate.fuzzy(true)
 		},
 		faunaData => {
@@ -914,7 +1016,7 @@ function registerTFGFauna(event) {
 
 	event.fauna(
 		climate => {
-			climate.minTemp(-75)
+			climate.minTemp(-97)
 			climate.fuzzy(true)
 		},
 		faunaData => {
@@ -924,7 +1026,7 @@ function registerTFGFauna(event) {
 
 	event.fauna(
 		climate => {
-			climate.minTemp(-95)
+			climate.minTemp(-109)
 			climate.fuzzy(true)
 		},
 		faunaData => {
@@ -934,7 +1036,7 @@ function registerTFGFauna(event) {
 
 	event.fauna(
 		climate => {
-			climate.minTemp(-75)
+			climate.minTemp(-100)
 			climate.fuzzy(true)
 		},
 		faunaData => {
@@ -944,7 +1046,7 @@ function registerTFGFauna(event) {
 
 	event.fauna(
 		climate => {
-			climate.minTemp(-85)
+			climate.minTemp(-105)
 			climate.fuzzy(true)
 		},
 		faunaData => {
@@ -954,7 +1056,7 @@ function registerTFGFauna(event) {
 
 	event.fauna(
 		climate => {
-			climate.minTemp(-85)
+			climate.minTemp(-106)
 			climate.fuzzy(true)
 		},
 		faunaData => {

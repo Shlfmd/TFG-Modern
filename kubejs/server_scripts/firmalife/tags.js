@@ -18,8 +18,6 @@ const registerFirmaLifeItemTags = (event) => {
     
     event.add('tfc:foods/usable_in_salad', 'firmalife:food/pickled_egg')
 
-    event.add('tfc:fluxstone', 'firmalife:hollow_shell')
-
     // Удаление тегов у руд
     event.removeAllTagsFrom("/tfc:ore/[^*]+/[^*]+/")
 }
@@ -84,4 +82,6 @@ const registerFirmaLifeFluidTags = (event) => {
     event.add('firmalife:mixable', 'tfcchannelcasting:dark_chocolate')
     event.add('firmalife:mixable', 'afc:maple_syrup')
     event.add('firmalife:mixable', 'afc:birch_syrup')
+
+    event.add('firmalife:oils', 'gtceu:seed_oil')
 }

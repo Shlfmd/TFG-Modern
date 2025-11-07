@@ -131,6 +131,12 @@ const registerAdAstraItemTags = (event) => {
 	// these are log tags
 	event.remove('ad_astra:aeronos_caps', 'ad_astra:aeronos_cap')
 	event.remove('ad_astra:strophar_caps', 'ad_astra:strophar_cap')
+	event.add('minecraft:wart_blocks', 'ad_astra:aeronos_cap')
+	event.add('minecraft:wart_blocks', 'ad_astra:strophar_cap')
+
+	event.add('tfc:makes_tannin', '#ad_astra:glacian_logs')
+	event.add('tfc:makes_tannin', '#tfc:crimson_logs')
+	event.add('tfc:makes_tannin', '#tfc:warped_logs')
 		
 	global.AD_ASTRA_WOOD.forEach(wood => {
 
@@ -366,12 +372,13 @@ const registerAdAstraBlockTags = (event) => {
 	event.add('tfg:heightmap_ignore', 'minecraft:warped_wart_block')
 	event.add('tfg:heightmap_ignore', 'species:alphacene_mushroom_block')
 	event.add('tfg:heightmap_ignore', 'species:alphacene_mushroom_growth')
-	event.add('tfg:heightmap_ignore', 'tfg:glacian_log')
-	event.add('tfg:heightmap_ignore', 'tfg:glacian_wood')
 	event.add('tfg:heightmap_ignore', 'tfg:glacian_leaves')
 	event.add('tfg:heightmap_ignore', 'betterend:glacian_hymenophore')
 	event.add('tfg:heightmap_ignore', 'species:alphacene_moss_block')
 	event.add('tfg:heightmap_ignore', 'minecraft:ice')
+	
+    event.add('tfc:can_be_snow_piled', 'ad_astra:aeronos_mushroom')
+	event.add('tfc:can_be_snow_piled', 'ad_astra:strophar_mushroom')
 
 	global.AD_ASTRA_WOOD.forEach(wood => {
 
@@ -400,6 +407,10 @@ const registerAdAstraBiomeTags = (event) => {
 		event.add('species:limpet_spawns', biome)
 	})
 
+	global.MARS_BIOMES.forEach(biome => {
+		event.add('tfg:mars_biomes', biome)
+	})
+
 	event.add('sandworm_mod:can_spawn_sandworms', 'tfg:mars/martian_dunes')
 	event.add('sandworm_mod:can_spawn_sandworms', 'tfg:mars/martian_deep_desert')
 
@@ -417,6 +428,20 @@ const registerAdAstraBiomeTags = (event) => {
 	event.add('tfg:has_light_sand_particles', 'tfg:mars/rusticus_edge')
 	event.add('tfg:has_light_sand_particles', 'tfg:mars/sangnum_edge')
 	event.add('tfg:has_light_sand_particles', 'tfg:mars/martian_river')
+
+	event.add('tfg:has_mild_dust_storms', 'tfg:mars/martian_mountains')
+	event.add('tfg:has_mild_dust_storms', 'tfg:mars/martian_river')
+	event.add('tfg:has_mild_dust_storms', 'tfg:mars/amber_hills')
+	event.add('tfg:has_mild_dust_storms', 'tfg:mars/rusticus_hills')
+	event.add('tfg:has_mild_dust_storms', 'tfg:mars/sangnum_hills')
+	event.add('tfg:has_moderate_dust_storms', 'tfg:mars/amber_plains')
+	event.add('tfg:has_moderate_dust_storms', 'tfg:mars/amber_edge')
+	event.add('tfg:has_moderate_dust_storms', 'tfg:mars/rusticus_plains')
+	event.add('tfg:has_moderate_dust_storms', 'tfg:mars/rusticus_edge')
+	event.add('tfg:has_moderate_dust_storms', 'tfg:mars/sangnum_plains')
+	event.add('tfg:has_moderate_dust_storms', 'tfg:mars/sangnum_edge')
+	event.add('tfg:has_severe_dust_storms', 'tfg:mars/martian_dunes')
+	event.add('tfg:has_severe_dust_storms', 'tfg:mars/martian_deep_desert')
 }
 
 const registerAdAstraEntityTypeTags = (event) => {
@@ -456,7 +481,15 @@ const registerAdAstraEntityTypeTags = (event) => {
 		'wan_ancient_beasts:soarer',
 		'wan_ancient_beasts:glider',
 		'wan_ancient_beasts:toxlacanth',
-		'wan_ancient_beasts:surfer'
+		'wan_ancient_beasts:surfer',
+		'tfg:surfer',
+		// europa
+		'endermanoverhaul:coral_enderman',
+		'endermanoverhaul:snowy_enderman',
+		'endermanoverhaul:ice_spikes_enderman',
+		'species:deepfish',
+		'species:leaf_hanger',
+		'species:cliff_hanger',
 	]
 
 	COLD_ENTITIES.forEach(entity => {
@@ -464,6 +497,8 @@ const registerAdAstraEntityTypeTags = (event) => {
 		event.add('ad_astra:can_survive_extreme_cold', entity)
 		event.add('ad_astra:lives_without_oxygen', entity)
 	})
+
+	event.add('ad_astra:can_survive_in_space', 'railways:conductor')
 
 	event.add('tfc:deals_crushing_damage', 'minecraft:enderman')
 	event.add('tfc:deals_crushing_damage', 'minecraft:stray')
@@ -487,8 +522,9 @@ const registerAdAstraEntityTypeTags = (event) => {
 	event.add('tfg:ignores_gravity', 'wan_ancient_beasts:soarer')
 	event.add('tfg:ignores_gravity', 'wan_ancient_beasts:glider')
 	// swimming mobs
-	event.add('tfg:ignores_gravity', 'wan_ancient_beasts:surfer')
+	event.add('tfg:ignores_gravity', 'tfg:surfer')
 	event.add('tfg:ignores_gravity', 'wan_ancient_beasts:toxlacanth')
+	event.add('tfg:ignores_gravity', 'endermanoverhaul:coral_enderman')
 }
 
 const registerAdAstraPlacedFeatures = (event) => {
@@ -510,16 +546,9 @@ const registerAdAstraPlacedFeatures = (event) => {
 	event.add('tfg:moon_small_rock_features', 'tfg:moon/surface/pile_moon_sand')
 	event.add('tfg:moon_small_rock_features', 'tfg:moon/surface/pile_white_sand')
 	event.add('tfg:moon_small_rock_features', 'tfg:moon/surface/pile_black_sand')
-
 	//#endregion
 
 	//#region Mars
-
-	// Craters
-	//event.add('tfg:mars_craters', 'tfg:mars/terrain/crater_extra_large')
-	//event.add('tfg:mars_craters', 'tfg:mars/terrain/crater_large')
-	//event.add('tfg:mars_craters', 'tfg:mars/terrain/crater_medium')
-
 	// Underground decoration
 	event.add('tfg:mars_underground_decoration', 'tfg:mars/underground/loose_rocks')
 	event.add('tfg:mars_underground_decoration', 'tfc:cave_spike')
@@ -620,6 +649,7 @@ const registerAdAstraPlacedFeatures = (event) => {
 	// Top layer
 	event.add("tfg:mars_top_layer_modification", "tfg:glow_lichen")
 	event.add("tfg:mars_top_layer_modification", "tfc:surface_loose_rocks")
+	event.add("tfg:mars_top_layer_modification", "tfg:mars/terrain/mars_poles")
 	
 	//#endregion
 
@@ -638,5 +668,10 @@ const registerAdAstraPlacedFeatures = (event) => {
 	event.add('tfg:venus_fractured_lands_terrain_features', 'tfg:venus/terrain/lake_geyserite')
 	event.add('tfg:venus_fractured_lands_terrain_features', 'tfg:venus/terrain/lake_orange_sand')
 	event.add('tfg:venus_fractured_lands_terrain_features', 'tfg:venus/terrain/lake_yellow_sand')
+	//#endregion
+
+	//#region Glacio
+	event.add("tfg:glacio_top_layer_modification", "tfg:glow_lichen")
+	event.add("tfg:glacio_top_layer_modification", "tfc:surface_loose_rocks")
 	//#endregion
 }

@@ -62,6 +62,7 @@ function registerTFCItemTags(event) {
     event.add("tfc:usable_on_tool_rack", "waterflasks:red_steel_flask");
     event.add("tfc:usable_on_tool_rack", "tfc:wool_cloth");
     event.add("tfc:usable_on_tool_rack", "firmalife:mixing_bowl");
+    event.add("tfc:usable_on_tool_rack", "#gtceu:molds");
 
     // Ингредиенты для закваски
     event.add("tfg:ferments_to_rennet", "tfc:food/soybean");
@@ -255,6 +256,7 @@ function registerTFCItemTags(event) {
     event.add("tfc:corals", "tfc:coral/brain_dead_coral");
     event.add("tfc:corals", "tfc:coral/fire_dead_coral");
     event.add("tfc:corals", "tfc:coral/horn_dead_coral");
+    event.add("forge:corals", "#tfc:corals");
 
     // Теги для каменных ступенек тфк
     global.TFC_STONE_TYPES.forEach((stoneTypeName) => {
@@ -326,6 +328,7 @@ function registerTFCItemTags(event) {
     event.add("tfc:forge_invisible_whitelist", "greate:titanium_mechanical_pump");
 
     event.add("forge:mushrooms", "tfc:plant/artists_conk");
+    event.add("forge:raw_materials/sylvite", "tfc:ore/sylvite");
 
     global.TFC_STONE_TYPES.forEach((stone) => {
         event.add("minecraft:stone_buttons", `tfc:rock/button/${stone}`);
@@ -410,12 +413,6 @@ function registerTFCBlockTags(event) {
     // Удаление тегов у руд
     event.removeAllTagsFrom("/tfc:ore/[^*]+/[^*]+/");
 
-    //#region Позволяем ТФК магме греть бойлер из Create
-    global.TFC_MAGMA_BLOCKS.forEach((el) => {
-        event.add("create:passive_boiler_heaters", el);
-    });
-    //#endregion
-
     //#region Nether
 
     event.add("beneath:nether_bush_plantable_on", "#tfc:clay_grass");
@@ -467,6 +464,11 @@ function registerTFCBlockTags(event) {
         event.add("minecraft:stone_buttons", `tfc:rock/button/${stone}`);
         event.add("minecraft:buttons", `tfc:rock/button/${stone}`);
     });
+
+    event.add('tfc:can_be_snow_piled', 'tfc:groundcover/feather');
+
+    event.add('tfcambiental:hot_stuff', 'tfc:pot');
+    event.add('tfcambiental:hot_stuff', 'tfc:grill');
 }
 
 /** @param {TagEvent.Fluid} event */
@@ -596,6 +598,7 @@ function registerTFCFluidTags(event) {
     event.add("tfc:alcohols", "tfcagedalcohol:aged_whiskey");
     event.add("tfc:alcohols", "tfcagedalcohol:aged_corn_whiskey");
     event.add("tfc:alcohols", "tfcagedalcohol:aged_rye_whiskey");
+    event.add("tfc:alcohols", "tfcagedalcohol:aged_mead");
 
     // Добавляем тег для скрытия в EMI
     event.add("c:hidden_from_recipe_viewers", "tfc:metal/bismuth");
@@ -626,6 +629,10 @@ function registerTFCFluidTags(event) {
 /** @param {TagEvent.Biome} event */
 function registerTFCBiomeTags(event) {
     event.add("tfc:kaolin_clay_spawns_in", "tfc:rolling_hills");
+
+    global.TFC_BIOMES.forEach(biome => {
+        event.add('tfg:overworld_biomes', biome);
+    })
 }
 
 /** @param {TagEvent.PlacedFeature} event */

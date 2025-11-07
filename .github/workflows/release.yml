@@ -157,7 +157,7 @@ jobs:
           sed -i -e "s#LOADER_TYPE#${LOADER_TYPE}#g" .pakku/server-overrides/forge-auto-install.txt
           sed -i -e "s#MINECRAFT_VERSION#${MINECRAFT_VERSION}#g" .pakku/server-overrides/forge-auto-install.txt
       - name: Cache pakku
-        uses: actions/cache@v4.2.4
+        uses: actions/cache@v4.3.0
         id: cache
         with:
           path: build/.cache
@@ -175,7 +175,7 @@ jobs:
           cd ./build/curseforge/
           mv *.zip $(basename -s .zip *.zip)-curseforge.zip
       - name: Upload artifact CurseForge
-        uses: actions/upload-artifact@v4.6.2
+        uses: actions/upload-artifact@v5.0.0
         with:
           name: ${{ needs.info.outputs.project_full_name }}-curseforge
           path: ./build/curseforge/${{ needs.info.outputs.project_full_name }}-curseforge.zip
@@ -185,7 +185,7 @@ jobs:
           cd ./build/modrinth/
           mv *.mrpack $(basename -s .mrpack *.mrpack)-modrinth.mrpack
       - name: Upload artifact modrinth
-        uses: actions/upload-artifact@v4.6.2
+        uses: actions/upload-artifact@v5.0.0
         with:
           name: ${{ needs.info.outputs.project_full_name }}-modrinth
           path: ./build/modrinth/${{ needs.info.outputs.project_full_name }}-modrinth.mrpack
@@ -201,7 +201,7 @@ jobs:
           cd ./build/multimc/
           zip -r ${{ needs.info.outputs.project_full_name }}-multimc.zip icon.png mmc-pack.json instance.cfg .minecraft/ flame/
       - name: Upload artifact multimc
-        uses: actions/upload-artifact@v4.6.2
+        uses: actions/upload-artifact@v5.0.0
         with:
           name: ${{ needs.info.outputs.project_full_name }}-multimc
           path: ./build/multimc/${{ needs.info.outputs.project_full_name }}-multimc.zip
@@ -211,7 +211,7 @@ jobs:
           cd ./build/serverpack/
           mv *.zip $(basename -s .zip *.zip)-serverpack.zip
       - name: Upload artifact server
-        uses: actions/upload-artifact@v4.6.2
+        uses: actions/upload-artifact@v5.0.0
         with:
           name: ${{ needs.info.outputs.project_full_name }}-serverpack
           path: ./build/serverpack/${{ needs.info.outputs.project_full_name }}-serverpack.zip
@@ -226,7 +226,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Download artifact
-        uses: actions/download-artifact@v5.0.0
+        uses: actions/download-artifact@v6.0.0
         with:
           merge-multiple: true
       - name: Check if artifact exist
@@ -243,25 +243,25 @@ jobs:
             echo 'No value found for artifact multimc.zip.' && exit 1
           fi
       - name: Upload prerelease artifact CurseForge
-        uses: actions/upload-artifact@v4.6.2
+        uses: actions/upload-artifact@v5.0.0
         with:
           name: prerelease-${{ needs.info.outputs.project_full_name }}-curseforge
           path: ./build/curseforge/${{ needs.info.outputs.project_full_name }}-curseforge.zip
           if-no-files-found: error
       - name: Upload prerelease artifact modrinth
-        uses: actions/upload-artifact@v4.6.2
+        uses: actions/upload-artifact@v5.0.0
         with:
           name: prerelease-${{ needs.info.outputs.project_full_name }}-modrinth
           path: ./build/modrinth/${{ needs.info.outputs.project_full_name }}-modrinth.mrpack
           if-no-files-found: warn
       - name: Upload prerelease artifact multimc
-        uses: actions/upload-artifact@v4.6.2
+        uses: actions/upload-artifact@v5.0.0
         with:
           name: prerelease-${{ needs.info.outputs.project_full_name }}-multimc
           path: ./build/multimc/${{ needs.info.outputs.project_full_name }}-multimc.zip
           if-no-files-found: error
       - name: Upload prerelease artifact server
-        uses: actions/upload-artifact@v4.6.2
+        uses: actions/upload-artifact@v5.0.0
         with:
           name: prerelease-${{ needs.info.outputs.project_full_name }}-serverpack
           path: ./build/serverpack/${{ needs.info.outputs.project_full_name }}-serverpack.zip
@@ -277,7 +277,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v5.0.0
       - name: Download artifact
-        uses: actions/download-artifact@v5.0.0
+        uses: actions/download-artifact@v6.0.0
         with:
           merge-multiple: true
       - name: Check if artifact exist
@@ -308,7 +308,7 @@ jobs:
           echo "EOF" >> $GITHUB_OUTPUT
       - name: Create release
         id: release
-        uses: softprops/action-gh-release@v2.3.3
+        uses: softprops/action-gh-release@v2.4.1
         with:
           name: ${{ steps.release_title.outputs.title }}
           tag_name: ${{ needs.info.outputs.project_version }}

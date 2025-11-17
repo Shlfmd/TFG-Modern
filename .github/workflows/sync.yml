@@ -43,7 +43,7 @@ jobs:
           git push origin upstream-sync/${{ steps.latest_tag.outputs.tag }}
       - name: Create PR for upstream changes
         if: steps.check_merge.outputs.already_merged == 'false'
-        uses: devops-infra/action-pull-request@v0.6.1
+        uses: devops-infra/action-pull-request@v1.0.2
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           source_branch: upstream-sync/${{ steps.latest_tag.outputs.tag }}

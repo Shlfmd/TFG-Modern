@@ -21,6 +21,7 @@
         "server-icon.png",
         "start_server.bat",
         "README.md"
+
     ],
     "client_overrides": [
         "resourcepacks",

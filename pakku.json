@@ -263,6 +263,9 @@
         "tfc-caelum": {
             "export": false
         },
+        "tfc-season-notifier": {
+            "side": "CLIENT"
+        },
         "caelum": {
             "export": false
         },

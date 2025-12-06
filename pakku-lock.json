@@ -3344,6 +3344,43 @@
             ]
         },
         {
+            "pakku_id": "Eq87pomMKNmxUgL7",
+            "type": "MOD",
+            "slug": {
+                "curseforge": "chisels-bits"
+            },
+            "name": {
+                "curseforge": "Chisels & Bits - For Forge"
+            },
+            "id": {
+                "curseforge": "231095"
+            },
+            "files": [
+                {
+                    "type": "curseforge",
+                    "file_name": "chisels-and-bits-forge-1.4.148.jar",
+                    "mc_versions": [
+                        "1.20.1",
+                        "1.20"
+                    ],
+                    "loaders": [
+                        "forge"
+                    ],
+                    "release_type": "release",
+                    "url": "https://edge.forgecdn.net/files/5203/366/chisels-and-bits-forge-1.4.148.jar",
+                    "id": "5203366",
+                    "parent_id": "231095",
+                    "hashes": {
+                        "sha1": "bff153dc16b26a0d4f0e8ccc27b2e0fc2dc89355",
+                        "md5": "dab773ee65efd8f1f79505e7cadd825a"
+                    },
+                    "required_dependencies": [],
+                    "size": 2105922,
+                    "date_published": "2024-03-22T18:46:20.373Z"
+                }
+            ]
+        },
+        {
             "pakku_id": "PvsGoUlYUbmQrMrV",
             "type": "MOD",
             "slug": {
@@ -4649,6 +4686,7 @@
                 "y0UC3kpLVhVgLz9b"
             ],
             "type": "MOD",
+            "side": "CLIENT",
             "slug": {
                 "curseforge": "create-better-fps"
             },

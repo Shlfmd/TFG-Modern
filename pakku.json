@@ -3,6 +3,7 @@
     "version": "DEV",
     "description": "An innovative modpack that contains GregTech and TerraFirmaCraft on 1.20.x.",
     "author": "Exception, Xikaro",
+    "release_type": "release",
     "overrides": [
         "config",
         "defaultconfigs",

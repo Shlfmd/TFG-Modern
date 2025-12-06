@@ -21,7 +21,7 @@
         "server-icon.png",
         "start_server.bat",
         "README.md"
-        
+
     ],
     "client_overrides": [
         "resourcepacks",
@@ -50,6 +50,9 @@
             "side": "CLIENT"
         },
         "chunk-animator": {
+            "side": "CLIENT"
+        },
+        "create-better-fps": {
             "side": "CLIENT"
         },
         "craftpresence": {
@@ -271,7 +274,6 @@
         "extreme_sound_muffler": {
             "export": false
         },
-
         "ftb-backups-2": {
             "side": "BOTH",
             "export": true

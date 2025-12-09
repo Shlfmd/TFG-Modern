@@ -1,7 +1,0 @@
-{
-  "parent": "minecraft:item/generated",
-  "textures": {
-    "layer0": "tfg:item/graphite_line/washed_graphite_briquette",
-    "layer1": "tfg:item/graphite_line/washed_graphite_briquette_overlay"
-  }
-}

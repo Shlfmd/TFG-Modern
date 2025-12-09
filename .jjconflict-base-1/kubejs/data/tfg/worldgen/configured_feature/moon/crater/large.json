@@ -1,7 +1,0 @@
-{
-	"type": "tfc:if_then",
-	"config": {
-		"if": "tfg:moon/crater/large_bowl",
-		"then": "tfg:moon/crater/meteorite"
-	}
-}

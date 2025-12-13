@@ -1,4 +1,4 @@
-// priority: 0
+// priority: -100
 "use strict";
 
 //#region Disabled Items
@@ -155,11 +155,6 @@ global.GTCEU_DISABLED_ITEMS = /** @type {const} */ ([
     "gtceu:titanium_chestplate",
     "gtceu:titanium_leggings",
     "gtceu:titanium_boots",
-
-    // Huh
-    "gtceu:wax_dust",
-    "gtceu:small_wax_dust",
-    "gtceu:tiny_wax_dust",
 
     // Sculk
     "gtceu:tiny_echo_shard_dust",
@@ -393,8 +388,8 @@ global.ADD_CIRCUIT = /** @type {const} */ ([
     { recipeId: "gtceu:chemical_reactor/acetic_acid_from_methanol", circuitNumber: 1 },
     { recipeId: "gtceu:large_chemical_reactor/acetic_acid_from_methanol", circuitNumber: 1 },
 
-    { recipeId: "gtceu:chemical_reactor/butraldehyde", circuitNumber: 1 },
-    { recipeId: "gtceu:large_chemical_reactor/butraldehyde", circuitNumber: 1 }
+    { recipeId: "gtceu:chemical_reactor/butraldehyde", circuitNumber: 5 },
+    { recipeId: "gtceu:large_chemical_reactor/butraldehyde", circuitNumber: 5 }
 ]);
 //#endregion
 

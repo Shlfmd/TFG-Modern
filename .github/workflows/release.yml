@@ -156,6 +156,11 @@ jobs:
           sed -i -e "s#LOADER_VERSION#${LOADER_VERSION}#g" .pakku/server-overrides/forge-auto-install.txt
           sed -i -e "s#LOADER_TYPE#${LOADER_TYPE}#g" .pakku/server-overrides/forge-auto-install.txt
           sed -i -e "s#MINECRAFT_VERSION#${MINECRAFT_VERSION}#g" .pakku/server-overrides/forge-auto-install.txt
+
+          sed -i \
+            's#"source":"https://api.github.com/repos/[^"]*/releases/latest"#"source":"https://api.github.com/repos/<ORG>/<REPO>/releases/latest"#' \
+            config/fancymenu/customization/gui_main_menu.txt
+
       - name: Cache pakku
         uses: actions/cache@v4.2.4
         id: cache

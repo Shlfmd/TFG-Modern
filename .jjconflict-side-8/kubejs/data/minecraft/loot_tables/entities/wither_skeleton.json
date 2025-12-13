@@ -1,0 +1,62 @@
+{
+	"type": "minecraft:entity",
+	"pools": [
+		{
+			"name": "loot_pool",
+			"rolls": 1,
+			"entries": [
+				{
+					"type": "minecraft:item",
+					"functions": [
+						{
+							"add": false,
+							"count": {
+								"type": "minecraft:uniform",
+								"max": 4.0,
+								"min": 2.0
+							},
+							"function": "minecraft:set_count"
+						}
+					],
+					"name": "minecraft:bone"
+				}
+			]
+		},
+		{
+			"name": "loot_pool",
+			"rolls": 1,
+			"entries": [
+				{
+					"type": "minecraft:item",
+					"functions": [
+						{
+							"add": false,
+							"count": {
+								"type": "minecraft:uniform",
+								"max": 4.0,
+								"min": 2.0
+							},
+							"function": "minecraft:set_count"
+						}
+					],
+					"name": "beneath:cursecoal"
+				},
+				{
+					"type": "minecraft:item",
+					"functions": [
+						{
+							"add": false,
+							"count": {
+								"type": "minecraft:uniform",
+								"max": 5.0,
+								"min": 3.0
+							},
+							"function": "minecraft:set_count"
+						}
+					],
+					"name": "gtceu:rich_raw_coal"
+				}
+			]
+		}
+	]
+}

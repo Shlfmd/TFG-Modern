@@ -3163,6 +3163,7 @@
                 "curseforge": "556708",
                 "modrinth": "Xkw3TXqP"
             },
+            "export": false,
             "files": [
                 {
                     "type": "curseforge",
@@ -4836,6 +4837,7 @@
                 "y0UC3kpLVhVgLz9b"
             ],
             "type": "MOD",
+            "side": "CLIENT",
             "slug": {
                 "curseforge": "create-better-fps"
             },
@@ -14943,6 +14945,7 @@
                 "curseforge": "999031",
                 "modrinth": "WYvV2Kci"
             },
+            "export": false,
             "files": [
                 {
                     "type": "curseforge",
@@ -15599,7 +15602,7 @@
                 "64uacGcEw697jVGs"
             ],
             "type": "MOD",
-            "side": "BOTH",
+            "side": "CLIENT",
             "slug": {
                 "curseforge": "tfc-season-notifier",
                 "modrinth": "tfc-season-notifier"

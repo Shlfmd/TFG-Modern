@@ -1,0 +1,69 @@
+
+#Disables certain types. Note that all these configs, like in any other mod, only hide stuff from tabs and disable their recipes
+[types]
+
+	[types.wood_type]
+
+		[types.wood_type.gtceu]
+			rubber = false
+
+		[types.wood_type.tfc]
+			acacia = true
+			ash = true
+			aspen = true
+			birch = true
+			blackwood = true
+			chestnut = true
+			douglas_fir = true
+			hickory = true
+			kapok = true
+			mangrove = true
+			maple = true
+			oak = true
+			palm = true
+			pine = true
+			rosewood = true
+			sequoia = true
+			spruce = true
+			sycamore = true
+			white_cedar = true
+			willow = true
+
+		[types.wood_type.domum_ornamentum]
+			cactus = true
+			cactus_extra = true
+
+		[types.wood_type.afc]
+			baobab = true
+			eucalyptus = true
+			mahogany = true
+			hevea = true
+			tualang = true
+			teak = true
+			cypress = true
+			fig = true
+			ironwood = true
+			ipe = true
+
+		[types.wood_type.ad_astra]
+			aeronos = true
+			strophar = true
+			glacian = true
+
+	[types.leaves_type]
+
+		[types.leaves_type.gtceu]
+			rubber = false
+
+		[types.leaves_type.ad_astra]
+			glacian = true
+
+#Disables specific entries
+[entries]
+
+	[entries.wood_type]
+
+		[entries.wood_type.create]
+			window_pane = true
+			window = true
+

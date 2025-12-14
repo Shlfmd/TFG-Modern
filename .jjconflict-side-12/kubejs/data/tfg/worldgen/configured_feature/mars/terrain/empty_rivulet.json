@@ -1,6 +1,0 @@
-{
-	"type": "tfc:rivulet",
-	"config": {
-		"state": "create:scorchia"
-	}
-}

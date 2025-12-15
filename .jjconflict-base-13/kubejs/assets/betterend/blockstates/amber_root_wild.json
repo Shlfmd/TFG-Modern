@@ -1,6 +1,0 @@
-{
-    "variants": {
-        "mature=true": { "model": "betterend:block/amber_root_wild_mature" },
-        "mature=false": { "model": "betterend:block/amber_root_wild_immature" }
-    }
-}

@@ -1,8 +1,0 @@
-{
-	"parent": "emi:item/third_item",
-	"textures": {
-		"first": "tfc:item/food/green_apple",
-		"second": "tfc:item/food/garlic",
-		"third": "tfc:item/food/dried_kelp"
-	}
-}

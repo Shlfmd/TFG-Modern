@@ -786,8 +786,10 @@ function registerGTCEUMetalRecipes(event) {
 		let chipped = ChemicalHelper.get(TagPrefix.gemChipped, material, 1)
 		let smallDust = ChemicalHelper.get(TagPrefix.dustSmall, material, 1)
 
+		let namespace = material === $GreateMaterials.RoseQuartz ? 'greate' : 'gtceu';
+
 		event.recipes.tfc.damage_inputs_shapeless_crafting(event.recipes.minecraft.crafting_shapeless(
-			ChemicalHelper.get(TagPrefix.surfaceRock, material, 1), [gem, '#tfc:chisels']))
+			`${namespace}:${material.getName()}_bud_indicator`, [gem, '#tfc:chisels']))
 			.id(`shapeless/${material.getName()}_bud_indicator`)
 
 		event.shaped(smallDust,

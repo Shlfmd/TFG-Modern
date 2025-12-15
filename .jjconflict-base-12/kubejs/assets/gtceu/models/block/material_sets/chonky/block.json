@@ -1,8 +1,0 @@
-{
-  "parent": "gtceu:block/cube_3_layer/all",
-  "textures": {
-    "bot_all": "gtceu:block/material_sets/chonky/block",
-    "mid_all": "gtceu:block/material_sets/chonky/block_secondary",
-    "top_all": "gtceu:block/material_sets/chonky/block_overlay"
-  }
-}

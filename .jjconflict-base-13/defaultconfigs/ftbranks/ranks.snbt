@@ -1,0 +1,13 @@
+{
+	member: {
+		name: "Player"
+		power: 1
+		condition: "always_active"
+		ftbranks.name_format: "&a{name}"
+		ftbchunks.max_claimed: 10000
+		ftbchunks.max_force_loaded: 10000
+		ftbchunks.chunk_load_offline: false
+		command.trashcan: true
+		command.enderchest: false
+	}
+}

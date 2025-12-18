@@ -1,0 +1,112 @@
+name: Sync Upstream Tags
+on:
+  schedule:
+    - cron: "0 0 * * *"
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+jobs:
+  sync-upstream:
+    runs-on: ubuntu-latest
+    if: github.event_name != 'push'
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5.0.0
+        with:
+          fetch-depth: 0
+      - name: Set up Git
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+      - name: Add upstream remote
+        run: |
+          git remote add upstream https://github.com/TerraFirmaGreg-Team/TFG-Modern.git
+          git fetch upstream --tags
+      - name: Get latest upstream tag
+        id: latest_tag
+        run: |
+          tag=$(git tag --list --sort=-creatordate | grep -vE 'rc|beta|alpha' | head -n1)
+          echo "tag=$tag" >> $GITHUB_OUTPUT
+      - name: Check if tag already merged
+        id: check_merge
+        run: |
+          if git merge-base --is-ancestor "refs/tags/${{ steps.latest_tag.outputs.tag }}" HEAD; then
+            echo "already_merged=true" >> $GITHUB_OUTPUT
+          else
+            echo "already_merged=false" >> $GITHUB_OUTPUT
+          fi
+      - name: Create upstream-sync branch from latest tag
+        if: steps.check_merge.outputs.already_merged == 'false'
+        run: |
+          git checkout -b upstream-sync/${{ steps.latest_tag.outputs.tag }} ${{ steps.latest_tag.outputs.tag }}
+          git push origin upstream-sync/${{ steps.latest_tag.outputs.tag }}
+      - name: Create PR for upstream changes
+        if: steps.check_merge.outputs.already_merged == 'false'
+        uses: devops-infra/action-pull-request@v0.6.1
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          source_branch: upstream-sync/${{ steps.latest_tag.outputs.tag }}
+          target_branch: main
+          title: "Sync upstream tag ${{ steps.latest_tag.outputs.tag }}"
+          body: |
+            This PR merges upstream tag ${{ steps.latest_tag.outputs.tag }} into main and prepares for a -shelf release.
+          draft: false
+          delete-branch: true
+  tag-after-merge:
+    runs-on: ubuntu-latest
+    needs: []
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5.0.0
+        with:
+          fetch-depth: 0
+      - name: Extract upstream tag from commit message or refs
+        id: extract_tag
+        run: |
+          TAG=$(git log -1 --pretty=%B | grep -oE 'Sync upstream tag [^ ]+' | awk '{print $4}')
+          if [ -z "$TAG" ]; then
+            TAG=$(git log -1 --pretty=%D | grep -oE 'upstream-sync/[^, ]+' | awk -F'/' '{print $2}')
+          fi
+          if [ -z "$TAG" ]; then
+            TAG=$(git tag --points-at HEAD | grep -v -- '-shelf' | head -n1)
+          fi
+          if [ -z "$TAG" ]; then
+            echo "No upstream tag found in commit message or refs."
+            exit 0
+          fi
+          echo "upstream_tag=$TAG" >> $GITHUB_OUTPUT
+      - name: Fetch all tags before checking for -shelf tag
+        if: steps.extract_tag.outputs.upstream_tag != ''
+        run: git fetch --tags
+      - name: Check if -shelf tag already exists
+        id: check_tag
+        if: steps.extract_tag.outputs.upstream_tag != ''
+        run: |
+          BASE_TAG="${{ steps.extract_tag.outputs.upstream_tag }}-shelf"
+          TAG="$BASE_TAG"
+          COUNT=0
+          while git rev-parse "$TAG" >/dev/null 2>&1; do
+            COUNT=$((COUNT+1))
+            TAG="${BASE_TAG}${COUNT}"
+          done
+          echo "shelf_tag=$TAG" >> $GITHUB_OUTPUT
+      - name: Create and push -shelf tag (with check after push)
+        if: steps.extract_tag.outputs.upstream_tag != ''
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          TAG="${{ steps.check_tag.outputs.shelf_tag }}"
+          git tag "$TAG"
+          git push origin "$TAG"
+          git fetch --tags
+          sleep 2
+          if ! git rev-parse "$TAG" >/dev/null 2>&1; then
+            echo "Tag $TAG was not created successfully."
+            exit 1
+          fi
+          if ! git ls-remote --tags origin | grep -q "refs/tags/$TAG$"; then
+            echo "Tag $TAG was not created successfully or a race condition occurred."
+            exit 1
+          fi

@@ -1,0 +1,15 @@
+{
+  "configVersion": 2,
+  "enabledByDefault": false,
+  "xOffset": 0,
+  "sneakXOffset": 0,
+  "sitXOffset": 0,
+  "renderStuckFeatures": true,
+  "vanillaHandsMode": "OFF",
+  "dynamicMode": true,
+  "vanillaHandsSkipSwimming": true,
+  "autoVanillaHands": [],
+  "autoToggleModItems": [
+    "exposure:camera"
+  ]
+}

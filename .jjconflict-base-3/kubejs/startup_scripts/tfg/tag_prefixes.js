@@ -3,16 +3,10 @@
 
 function registerTFGTagPrefixes(event) {
 
-	excludeAllGemsButNormal(GTMaterials.get('tfg:apt'));
-	TagPrefix.block.setIgnored(GTMaterials.get('tfg:apt'));
-	excludeAllGemsButNormal(GTMaterials.get('tfg:tetrafluoroethane'));
-	TagPrefix.block.setIgnored(GTMaterials.get('tfg:tetrafluoroethane'));
-	excludeAllGemsButNormal(GTMaterials.get('tfg:crimsene'));
-	TagPrefix.block.setIgnored(GTMaterials.get('tfg:crimsene'));
-	excludeAllGemsButNormal(GTMaterials.get('tfg:warpane'));
-	TagPrefix.block.setIgnored(GTMaterials.get('tfg:warpane'));
-
-	excludeAllGemsButNormal(GTMaterials.Coke)
+	excludeAllGemsButNormal(TFGHelpers.getMaterial('tfg:apt'));
+	excludeAllGemsButNormal(TFGHelpers.getMaterial('tfg:tetrafluoroethane'));
+	excludeAllGemsButNormal(TFGHelpers.getMaterial('tfg:crimsene'));
+	excludeAllGemsButNormal(TFGHelpers.getMaterial('tfg:warpane'));
 	
 	TagPrefix.nugget.setIgnored(GTMaterials.RawRubber);
 	TagPrefix.ingot.setIgnored(GTMaterials.RawRubber);
@@ -25,4 +19,5 @@ function excludeAllGemsButNormal(material) {
 	TagPrefix.gemFlawed.setIgnored(material);
 	TagPrefix.gemFlawless.setIgnored(material);
 	TagPrefix.gemExquisite.setIgnored(material);
+	TagPrefix.block.setIgnored(material);
 }

@@ -1,8 +1,0 @@
-{
-	"parent": "tfc:block/grass_path",
-	"textures": {
-		"dirt": "tfg:block/grass/mars_dirt",
-		"top": "tfg:block/grass/mars_path",
-		"side": "tfg:block/grass/mars_dirt"
-	}
-}

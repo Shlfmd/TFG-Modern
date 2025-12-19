@@ -1,8 +1,0 @@
-{
-	"parent": "emi:item/third_item",
-	"textures": {
-		"first": "tfc:item/groundcover/humus",
-		"second": "tfc:item/groundcover/dead_grass",
-		"third": "tfc:item/food/pumpkin"
-	}
-}

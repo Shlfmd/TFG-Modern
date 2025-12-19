@@ -1,6 +1,0 @@
-{
-	"parent": "tfc:block/rock/loose_igneous_intrusive_2",
-	"textures": {
-		"texture": "gtceu:block/stones/red_granite/stone"
-	}
-}

@@ -1,7 +1,0 @@
-{
-    "parent": "betterend:block/crop_wild",
-    "textures": {
-        "crop": "betterend:block/chorus_mushroom_dead",
-        "particle": "betterend:block/chorus_mushroom_dead"
-    }
-}

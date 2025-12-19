@@ -1,7 +1,0 @@
-{
-	"parent": "block/cube_column",
-	"textures": {
-		"end": "tfc:block/wood/stripped_log_top/blackwood",
-		"side": "tfc:block/charcoal_pile"
-	}
-}

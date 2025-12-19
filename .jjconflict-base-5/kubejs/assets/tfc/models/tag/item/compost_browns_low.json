@@ -1,8 +1,0 @@
-{
-	"parent": "emi:item/third_item",
-	"textures": {
-		"first": "tfc:block/plant/jungle_vines/vine",
-		"second": "tfc:block/plant/arundo/tip",
-		"third": "tfc:item/groundcover/fallen_leaves"
-	}
-}

@@ -119,14 +119,14 @@
 				{
 					"type": "minecraft:item",
 					"name": "gtceu:cobalt_brass_nugget",
-					"weight": 40,
+					"weight": 80,
 					"functions": [
 						{
 							"add": false,
 							"count": {
 								"type": "minecraft:uniform",
-								"max": 4,
-								"min": 2
+								"max": 10,
+								"min": 6
 							},
 							"function": "minecraft:set_count"
 						}
@@ -135,14 +135,14 @@
 				{
 					"type": "minecraft:item",
 					"name": "gtceu:cobalt_nugget",
-					"weight": 50,
+					"weight": 100,
 					"functions": [
 						{
 							"add": false,
 							"count": {
 								"type": "minecraft:uniform",
-								"max": 4,
-								"min": 2
+								"max": 10,
+								"min": 6
 							},
 							"function": "minecraft:set_count"
 						}
@@ -151,14 +151,14 @@
 				{
 					"type": "minecraft:item",
 					"name": "create:copper_nugget",
-					"weight": 80,
+					"weight": 100,
 					"functions": [
 						{
 							"add": false,
 							"count": {
 								"type": "minecraft:uniform",
-								"max": 4,
-								"min": 2
+								"max": 10,
+								"min": 6
 							},
 							"function": "minecraft:set_count"
 						}
@@ -167,14 +167,14 @@
 				{
 					"type": "minecraft:item",
 					"name": "create:zinc_nugget",
-					"weight": 40,
+					"weight": 100,
 					"functions": [
 						{
 							"add": false,
 							"count": {
 								"type": "minecraft:uniform",
-								"max": 4,
-								"min": 2
+								"max": 10,
+								"min": 6
 							},
 							"function": "minecraft:set_count"
 						}
@@ -183,14 +183,14 @@
 				{
 					"type": "minecraft:item",
 					"name": "gtceu:lead_nugget",
-					"weight": 40,
+					"weight": 100,
 					"functions": [
 						{
 							"add": false,
 							"count": {
 								"type": "minecraft:uniform",
-								"max": 4,
-								"min": 2
+								"max": 10,
+								"min": 6
 							},
 							"function": "minecraft:set_count"
 						}
@@ -199,14 +199,14 @@
 				{
 					"type": "minecraft:item",
 					"name": "create:brass_nugget",
-					"weight": 40,
+					"weight": 80,
 					"functions": [
 						{
 							"add": false,
 							"count": {
 								"type": "minecraft:uniform",
-								"max": 4,
-								"min": 2
+								"max": 10,
+								"min": 6
 							},
 							"function": "minecraft:set_count"
 						}
@@ -215,14 +215,14 @@
 				{
 					"type": "minecraft:item",
 					"name": "gtceu:bismuth_nugget",
-					"weight": 60,
+					"weight": 80,
 					"functions": [
 						{
 							"add": false,
 							"count": {
 								"type": "minecraft:uniform",
-								"max": 4,
-								"min": 2
+								"max": 10,
+								"min": 6
 							},
 							"function": "minecraft:set_count"
 						}
@@ -237,11 +237,6 @@
 					"type": "minecraft:item",
 					"name": "tfchotornot:tongs/wood",
 					"weight": 30
-				},
-				{
-					"type": "minecraft:item",
-					"name": "tfc:ceramic/vessel",
-					"weight": 50
 				},
 				{
 					"type": "minecraft:item",

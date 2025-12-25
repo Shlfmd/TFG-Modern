@@ -2819,6 +2819,43 @@
             ]
         },
         {
+            "pakku_id": "hro292ZSHvGycjKi",
+            "type": "MOD",
+            "slug": {
+                "curseforge": "chisels-bits"
+            },
+            "name": {
+                "curseforge": "Chisels & Bits - For Forge"
+            },
+            "id": {
+                "curseforge": "231095"
+            },
+            "files": [
+                {
+                    "type": "curseforge",
+                    "file_name": "chisels-and-bits-forge-1.4.148.jar",
+                    "mc_versions": [
+                        "1.20.1",
+                        "1.20"
+                    ],
+                    "loaders": [
+                        "forge"
+                    ],
+                    "release_type": "release",
+                    "url": "https://edge.forgecdn.net/files/5203/366/chisels-and-bits-forge-1.4.148.jar",
+                    "id": "5203366",
+                    "parent_id": "231095",
+                    "hashes": {
+                        "sha1": "bff153dc16b26a0d4f0e8ccc27b2e0fc2dc89355",
+                        "md5": "dab773ee65efd8f1f79505e7cadd825a"
+                    },
+                    "required_dependencies": [],
+                    "size": 2105922,
+                    "date_published": "2024-03-22T18:46:20.373Z"
+                }
+            ]
+        },
+        {
             "pakku_id": "MMbs6fmHDeCviDxT",
             "type": "MOD",
             "slug": {
@@ -4861,6 +4898,76 @@
             ]
         },
         {
+            "pakku_id": "mCr9VkPRSRejC7M5",
+            "pakku_links": [
+                "5gk9IjWgLrcKJC5n"
+            ],
+            "type": "MOD",
+            "side": "CLIENT",
+            "slug": {
+                "curseforge": "cull-leaves",
+                "modrinth": "cull-leaves"
+            },
+            "name": {
+                "curseforge": "Cull Leaves",
+                "modrinth": "Cull Leaves"
+            },
+            "id": {
+                "curseforge": "423254",
+                "modrinth": "GNxdLCoP"
+            },
+            "files": [
+                {
+                    "type": "curseforge",
+                    "file_name": "cullleaves-forge-4.1.1+1.20.1.jar",
+                    "mc_versions": [
+                        "1.20.1",
+                        "1.20"
+                    ],
+                    "loaders": [
+                        "forge"
+                    ],
+                    "release_type": "release",
+                    "url": "https://edge.forgecdn.net/files/7324/169/cullleaves-forge-4.1.1+1.20.1.jar",
+                    "id": "7324169",
+                    "parent_id": "423254",
+                    "hashes": {
+                        "sha1": "610b92837c4233c5c1f22ed495728c5ad0c78050",
+                        "md5": "21f30cc07b65b91d607a2877a24d3f57"
+                    },
+                    "required_dependencies": [
+                        "488090"
+                    ],
+                    "size": 97480,
+                    "date_published": "2025-12-12T12:36:27.390Z"
+                },
+                {
+                    "type": "modrinth",
+                    "file_name": "cullleaves-forge-4.1.1+1.20.1.jar",
+                    "mc_versions": [
+                        "1.20",
+                        "1.20.1"
+                    ],
+                    "loaders": [
+                        "forge"
+                    ],
+                    "release_type": "release",
+                    "url": "https://cdn.modrinth.com/data/GNxdLCoP/versions/yFZM1Bsc/cullleaves-forge-4.1.1+1.20.1.jar",
+                    "id": "yFZM1Bsc",
+                    "parent_id": "GNxdLCoP",
+                    "hashes": {
+                        "sha512": "3c68a290b5b546a663d38a1353485aca6f02efbb80fbd1c0e10214d93c27fadd5145f4fb74a7c616a0ce34cb4ffa1a75a62ca386c7d1041bbdf411b29626753f",
+                        "sha1": "610b92837c4233c5c1f22ed495728c5ad0c78050"
+                    },
+                    "required_dependencies": [
+                        "codAaoxh"
+                    ],
+                    "size": 97480,
+                    "date_published": "2025-12-12T12:36:27.190855Z"
+                }
+            ]
+        },
+        {
             "pakku_id": "xIGFswDQwknKRFqJ",
             "type": "MOD",
             "slug": {
@@ -5820,7 +5927,7 @@
             ]
         },
         {
-            "pakku_id": "JzztXIQsyzFZhzMY",
+            "pakku_id": "09DmkCBgO3EvmZNL",
             "pakku_links": [
                 "pB7ARGecP03UXpd6"
             ],
@@ -5841,7 +5948,7 @@
             "files": [
                 {
                     "type": "curseforge",
-                    "file_name": "DustyDecorations_1.20.1Forge_V1.10.jar",
+                    "file_name": "DustyDecorations_1.20.1Forge_V1.10.1.jar",
                     "mc_versions": [
                         "1.20.1"
                     ],
@@ -5849,22 +5956,22 @@
                         "forge"
                     ],
                     "release_type": "release",
-                    "url": "https://edge.forgecdn.net/files/7311/108/DustyDecorations_1.20.1Forge_V1.10.jar",
-                    "id": "7311108",
+                    "url": "https://edge.forgecdn.net/files/7344/963/DustyDecorations_1.20.1Forge_V1.10.1.jar",
+                    "id": "7344963",
                     "parent_id": "843344",
                     "hashes": {
-                        "sha1": "ebb28e4cfd953f29429b81bf49a1e7da0ac82491",
-                        "md5": "100281e7fd20d7d7914e3a7f700b4e0a"
+                        "sha1": "afc0b4695c57750c7b40096db80fd79a0266e670",
+                        "md5": "3a45446e0fa61c6f8057deebe82302df"
                     },
                     "required_dependencies": [
                         "388172"
                     ],
-                    "size": 4164293,
-                    "date_published": "2025-12-09T09:43:48.367Z"
+                    "size": 4163406,
+                    "date_published": "2025-12-17T17:41:21.863Z"
                 },
                 {
                     "type": "modrinth",
-                    "file_name": "DustyDecorations_1.20.1Forge_V1.10.jar",
+                    "file_name": "DustyDecorations_1.20.1Forge_V1.10.1.jar",
                     "mc_versions": [
                         "1.20.1"
                     ],
@@ -5872,16 +5979,16 @@
                         "forge"
                     ],
                     "release_type": "release",
-                    "url": "https://cdn.modrinth.com/data/KgFOuaiZ/versions/bYJjwR18/DustyDecorations_1.20.1Forge_V1.10.jar",
-                    "id": "bYJjwR18",
+                    "url": "https://cdn.modrinth.com/data/KgFOuaiZ/versions/v0PMrpBt/DustyDecorations_1.20.1Forge_V1.10.1.jar",
+                    "id": "v0PMrpBt",
                     "parent_id": "KgFOuaiZ",
                     "hashes": {
-                        "sha512": "ae8d98aef1f4f8b1ebd13cd41b7a31e82924026cad9e5047d393f715b7f309f1d9b8d5f3e1693f3f9f4d47f34ec7351754b9dfdf24f202e176dcb00c88333c37",
-                        "sha1": "ebb28e4cfd953f29429b81bf49a1e7da0ac82491"
+                        "sha512": "3199b092790b832a396908b3af7f8e8271563bd0a6ff8bcaa0ac000f6d472e575980185d6f791bf5877f387e4ad82d7ef5572f97449bd44c036ccecc0619d26b",
+                        "sha1": "afc0b4695c57750c7b40096db80fd79a0266e670"
                     },
                     "required_dependencies": [],
-                    "size": 4164293,
-                    "date_published": "2025-12-09T21:48:28.695723Z"
+                    "size": 4163406,
+                    "date_published": "2025-12-17T17:40:55.300166Z"
                 }
             ]
         },
@@ -10543,6 +10650,69 @@
             ]
         },
         {
+            "pakku_id": "5gk9IjWgLrcKJC5n",
+            "type": "MOD",
+            "side": "BOTH",
+            "slug": {
+                "curseforge": "midnightlib",
+                "modrinth": "midnightlib"
+            },
+            "name": {
+                "curseforge": "MidnightLib",
+                "modrinth": "MidnightLib"
+            },
+            "id": {
+                "curseforge": "488090",
+                "modrinth": "codAaoxh"
+            },
+            "files": [
+                {
+                    "type": "curseforge",
+                    "file_name": "midnightlib-forge-1.9.2+1.20.1.jar",
+                    "mc_versions": [
+                        "1.20.1",
+                        "1.20"
+                    ],
+                    "loaders": [
+                        "forge"
+                    ],
+                    "release_type": "release",
+                    "url": "https://edge.forgecdn.net/files/7318/663/midnightlib-forge-1.9.2+1.20.1.jar",
+                    "id": "7318663",
+                    "parent_id": "488090",
+                    "hashes": {
+                        "sha1": "ff01aa718b71249012c41d9926d3fd2982809fdb",
+                        "md5": "e4903bab4c3cf86d64cadb21cd4f279e"
+                    },
+                    "required_dependencies": [],
+                    "size": 61987,
+                    "date_published": "2025-12-11T00:14:18.203Z"
+                },
+                {
+                    "type": "modrinth",
+                    "file_name": "midnightlib-forge-1.9.2+1.20.1.jar",
+                    "mc_versions": [
+                        "1.20",
+                        "1.20.1"
+                    ],
+                    "loaders": [
+                        "forge"
+                    ],
+                    "release_type": "release",
+                    "url": "https://cdn.modrinth.com/data/codAaoxh/versions/EVVb5nP3/midnightlib-forge-1.9.2+1.20.1.jar",
+                    "id": "EVVb5nP3",
+                    "parent_id": "codAaoxh",
+                    "hashes": {
+                        "sha512": "a4f50d46ad30de0f5622fd6aa8415a949889d114a1dc051b2d8d15ff505273aff80f8b40d61193ca71112567a3be396899e96d0ff1c26af31e77a9c68f70e896",
+                        "sha1": "ff01aa718b71249012c41d9926d3fd2982809fdb"
+                    },
+                    "required_dependencies": [],
+                    "size": 61987,
+                    "date_published": "2025-12-11T00:14:17.524928Z"
+                }
+            ]
+        },
+        {
             "pakku_id": "vLkSeib1zFzTMcPF",
             "type": "MOD",
             "side": "BOTH",
@@ -14814,6 +14984,77 @@
             ]
         },
         {
+            "pakku_id": "06wpNNgjeutxjOty",
+            "pakku_links": [
+                "64uacGcEw697jVGs"
+            ],
+            "type": "MOD",
+            "side": "BOTH",
+            "slug": {
+                "curseforge": "tfc-regrowing-forests",
+                "modrinth": "tfc-regrowing-forests"
+            },
+            "name": {
+                "curseforge": "TFC Regrowing Forests",
+                "modrinth": "TFC Regrowing Forests"
+            },
+            "id": {
+                "curseforge": "1091993",
+                "modrinth": "Zh7v8m6u"
+            },
+            "files": [
+                {
+                    "type": "curseforge",
+                    "file_name": "TFCRegrowingForests-1.20.1-2.1.jar",
+                    "mc_versions": [
+                        "1.20.1",
+                        "1.20"
+                    ],
+                    "loaders": [
+                        "forge",
+                        "neoforge"
+                    ],
+                    "release_type": "release",
+                    "url": "https://edge.forgecdn.net/files/7367/730/TFCRegrowingForests-1.20.1-2.1.jar",
+                    "id": "7367730",
+                    "parent_id": "1091993",
+                    "hashes": {
+                        "sha1": "ccf204684e24547f47ec59538696b80a626142fa",
+                        "md5": "f25531fe0a74ac61f989a782a2cb6834"
+                    },
+                    "required_dependencies": [
+                        "302973"
+                    ],
+                    "size": 1629038,
+                    "date_published": "2025-12-23T01:37:57.607Z"
+                },
+                {
+                    "type": "modrinth",
+                    "file_name": "TFCRegrowingForests-1.20.1-2.1.jar",
+                    "mc_versions": [
+                        "1.20.1"
+                    ],
+                    "loaders": [
+                        "forge",
+                        "neoforge"
+                    ],
+                    "release_type": "release",
+                    "url": "https://cdn.modrinth.com/data/Zh7v8m6u/versions/n1f1ARi7/TFCRegrowingForests-1.20.1-2.1.jar",
+                    "id": "n1f1ARi7",
+                    "parent_id": "Zh7v8m6u",
+                    "hashes": {
+                        "sha512": "9a461e71b06fe64a210a86a9883ca1b44b3f4721b958109c0d112f2f5051b5db97ef6627a0d7092fd208ac38ffad81b9dd2b5cf554c45988e5d63f18dd608486",
+                        "sha1": "ccf204684e24547f47ec59538696b80a626142fa"
+                    },
+                    "required_dependencies": [
+                        "JaCEZUhg"
+                    ],
+                    "size": 1629038,
+                    "date_published": "2025-12-23T01:54:32.622032Z"
+                }
+            ]
+        },
+        {
             "pakku_id": "ajFTZODDe9JA6OiW",
             "pakku_links": [
                 "64uacGcEw697jVGs"
@@ -14879,6 +15120,120 @@
                     ],
                     "size": 62230,
                     "date_published": "2025-11-28T08:17:29.408127Z"
+                }
+            ]
+        },
+        {
+            "pakku_id": "8ZyOEcyw73ifOHQA",
+            "pakku_links": [
+                "64uacGcEw697jVGs"
+            ],
+            "type": "MOD",
+            "side": "CLIENT",
+            "slug": {
+                "curseforge": "tfc-season-notifier",
+                "modrinth": "tfc-season-notifier"
+            },
+            "name": {
+                "curseforge": "TFC Season Notifier",
+                "modrinth": "TFC Season Notifier"
+            },
+            "id": {
+                "curseforge": "1344241",
+                "modrinth": "htszzgLu"
+            },
+            "redistributable": false,
+            "files": [
+                {
+                    "type": "curseforge",
+                    "file_name": "tfc_season_notifier-1.20.1-1.1.0.jar",
+                    "mc_versions": [
+                        "1.20.1"
+                    ],
+                    "loaders": [
+                        "forge"
+                    ],
+                    "release_type": "release",
+                    "url": "https://edge.forgecdn.net/files/6992/788/tfc_season_notifier-1.20.1-1.1.0.jar",
+                    "id": "6992788",
+                    "parent_id": "1344241",
+                    "hashes": {
+                        "sha1": "6429d563e19939a4dcba94a4fd053f5dd12dd6e4",
+                        "md5": "3679e9341ba9bda9776dac54843bc5cf"
+                    },
+                    "required_dependencies": [],
+                    "size": 20606,
+                    "date_published": "2025-09-13T14:32:44.103Z"
+                },
+                {
+                    "type": "modrinth",
+                    "file_name": "tfc_season_notifier-1.20.1-1.1.0.jar",
+                    "mc_versions": [
+                        "1.20.1"
+                    ],
+                    "loaders": [
+                        "forge"
+                    ],
+                    "release_type": "release",
+                    "url": "https://cdn.modrinth.com/data/htszzgLu/versions/kjX3MvOW/tfc_season_notifier-1.20.1-1.1.0.jar",
+                    "id": "kjX3MvOW",
+                    "parent_id": "htszzgLu",
+                    "hashes": {
+                        "sha512": "1a79df3b2340eb25eace79d97aab8d8afec4b5c91463fdf89aec7ecb5af458c26f561d13f9c4ead7a1e072f8374ff736158409b320f1f33f5568ae26033c44ca",
+                        "sha1": "6429d563e19939a4dcba94a4fd053f5dd12dd6e4"
+                    },
+                    "required_dependencies": [
+                        "JaCEZUhg"
+                    ],
+                    "size": 20606,
+                    "date_published": "2025-09-13T14:29:29.860852Z"
+                }
+            ]
+        },
+        {
+            "pakku_id": "n3lFGYHw1uIS1GaD",
+            "pakku_links": [
+                "uyIxUlzf2WtnS2bm",
+                "VMESDUy1b2cSQOhC",
+                "64uacGcEw697jVGs"
+            ],
+            "type": "MOD",
+            "slug": {
+                "curseforge": "tfc-structures-dungeons-arise"
+            },
+            "name": {
+                "curseforge": "TFC Structures - Dungeons Arise"
+            },
+            "id": {
+                "curseforge": "1160579"
+            },
+            "redistributable": false,
+            "files": [
+                {
+                    "type": "curseforge",
+                    "file_name": "tfc_dungeons_arise-1.20.1-forge-1.0.0.jar",
+                    "mc_versions": [
+                        "1.20.1"
+                    ],
+                    "loaders": [
+                        "neoforge",
+                        "forge"
+                    ],
+                    "release_type": "release",
+                    "url": "https://edge.forgecdn.net/files/5996/542/tfc_dungeons_arise-1.20.1-forge-1.0.0.jar",
+                    "id": "5996542",
+                    "parent_id": "1160579",
+                    "hashes": {
+                        "sha1": "459f5ca863b68aea09273d0df500526a531692db",
+                        "md5": "294dfd5c40653e54dcfb822fb110ebc1"
+                    },
+                    "required_dependencies": [
+                        "1129601",
+                        "442508",
+                        "302973"
+                    ],
+                    "size": 410754,
+                    "date_published": "2024-12-16T18:00:46.610Z"
                 }
             ]
         },

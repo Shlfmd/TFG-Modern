@@ -48,6 +48,9 @@
         "better-third-person": {
             "side": "CLIENT"
         },
+        "cull-leaves": {
+            "side": "CLIENT"
+        },
         "chunk-animator": {
             "side": "CLIENT"
         },

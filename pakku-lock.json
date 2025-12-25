@@ -1140,20 +1140,16 @@
             ]
         },
         {
-            "pakku_id": "ekqv7D3byB0nzBRI",
+            "pakku_id": "qGg60cM6fVXdyQwE",
             "type": "MOD",
-            "side": "BOTH",
             "slug": {
-                "curseforge": "apple-crates",
-                "modrinth": "apple-crates"
+                "curseforge": "apple-crates"
             },
             "name": {
-                "curseforge": "Apple Crates",
-                "modrinth": "Apple Crates"
+                "curseforge": "Apple Crates"
             },
             "id": {
-                "curseforge": "630726",
-                "modrinth": "oQaAgvJv"
+                "curseforge": "630726"
             },
             "files": [
                 {
@@ -1177,47 +1173,6 @@
                     "required_dependencies": [],
                     "size": 239872,
                     "date_published": "2025-09-19T12:27:11.197Z"
-                },
-                {
-                    "type": "modrinth",
-                    "file_name": "Apple Crates-forge-1.19.2-2.13.1.jar",
-                    "mc_versions": [
-                        "1.19.2",
-                        "1.19.3",
-                        "1.19.4",
-                        "1.20",
-                        "1.20.1",
-                        "1.20.2",
-                        "1.20.3",
-                        "1.20.4",
-                        "1.20.5",
-                        "1.20.6",
-                        "1.21",
-                        "1.21.1",
-                        "1.21.2",
-                        "1.21.3",
-                        "1.21.4",
-                        "1.21.5",
-                        "1.21.6",
-                        "1.21.7",
-                        "1.21.8",
-                        "1.21.9",
-                        "1.21.10"
-                    ],
-                    "loaders": [
-                        "forge"
-                    ],
-                    "release_type": "release",
-                    "url": "https://cdn.modrinth.com/data/oQaAgvJv/versions/QLi0vPDW/Apple Crates-forge-1.19.2-2.13.1.jar",
-                    "id": "QLi0vPDW",
-                    "parent_id": "oQaAgvJv",
-                    "hashes": {
-                        "sha512": "f1d06b2864f70316c3b8c52631150f5618b3857d13a5d42f1f543f7cabe7f2d90b152728b73b49ad89030f39955120b04303085bae30881a748fc6c7925c45dc",
-                        "sha1": "39019cc02abb02e2e8b126a8e545510b049d6ce7"
-                    },
-                    "required_dependencies": [],
-                    "size": 230869,
-                    "date_published": "2025-10-31T14:11:24.659187Z"
                 }
             ]
         },

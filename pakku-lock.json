@@ -1140,43 +1140,6 @@
             ]
         },
         {
-            "pakku_id": "qGg60cM6fVXdyQwE",
-            "type": "MOD",
-            "slug": {
-                "curseforge": "apple-crates"
-            },
-            "name": {
-                "curseforge": "Apple Crates"
-            },
-            "id": {
-                "curseforge": "630726"
-            },
-            "files": [
-                {
-                    "type": "curseforge",
-                    "file_name": "applecrates-forge-1.20.1-3.3.0.jar",
-                    "mc_versions": [
-                        "1.20.1"
-                    ],
-                    "loaders": [
-                        "neoforge",
-                        "forge"
-                    ],
-                    "release_type": "beta",
-                    "url": "https://edge.forgecdn.net/files/7011/810/applecrates-forge-1.20.1-3.3.0.jar",
-                    "id": "7011810",
-                    "parent_id": "630726",
-                    "hashes": {
-                        "sha1": "f2913e4f6e5238643540966faf428d56ab4137ec",
-                        "md5": "4f522dc0222a366cd47cef82ee76ac0a"
-                    },
-                    "required_dependencies": [],
-                    "size": 239872,
-                    "date_published": "2025-09-19T12:27:11.197Z"
-                }
-            ]
-        },
-        {
             "pakku_id": "SKNobxecQul3CE8g",
             "pakku_links": [
                 "3QJUyVc5jxbc7OFC",
@@ -5205,68 +5168,6 @@
             ]
         },
         {
-            "pakku_id": "AfKJHJE6CtrpRz0K",
-            "type": "MOD",
-            "side": "BOTH",
-            "slug": {
-                "curseforge": "decorative-core",
-                "modrinth": "decorative-core"
-            },
-            "name": {
-                "curseforge": "Decorative Core",
-                "modrinth": "Decorative Core"
-            },
-            "id": {
-                "curseforge": "1247662",
-                "modrinth": "g0YZhKZF"
-            },
-            "redistributable": false,
-            "files": [
-                {
-                    "type": "curseforge",
-                    "file_name": "decorative_core-1.0508-forge-1.20.1.jar",
-                    "mc_versions": [
-                        "1.20.1"
-                    ],
-                    "loaders": [
-                        "forge"
-                    ],
-                    "release_type": "release",
-                    "url": "https://edge.forgecdn.net/files/6943/969/decorative_core-1.0508-forge-1.20.1.jar",
-                    "id": "6943969",
-                    "parent_id": "1247662",
-                    "hashes": {
-                        "sha1": "156841c2a0e6eb011b76ee47b507eb64e64db076",
-                        "md5": "79aca20db40bd96e39adcc6ba48bb86c"
-                    },
-                    "required_dependencies": [],
-                    "size": 31557,
-                    "date_published": "2025-08-30T07:51:33.153Z"
-                },
-                {
-                    "type": "modrinth",
-                    "file_name": "decorative_core-1.0508-forge-1.20.1.jar",
-                    "mc_versions": [
-                        "1.20.1"
-                    ],
-                    "loaders": [
-                        "forge"
-                    ],
-                    "release_type": "release",
-                    "url": "https://cdn.modrinth.com/data/g0YZhKZF/versions/3yAeaNwj/decorative_core-1.0508-forge-1.20.1.jar",
-                    "id": "3yAeaNwj",
-                    "parent_id": "g0YZhKZF",
-                    "hashes": {
-                        "sha512": "9ad0ddb6f4531308d7f37918969272ef93651dc50778740276be696b0f868f7ea44904cba5f7c079dfb6b32b9531f0de6c7013ad26cf5bbcb0bad076436aa722",
-                        "sha1": "156841c2a0e6eb011b76ee47b507eb64e64db076"
-                    },
-                    "required_dependencies": [],
-                    "size": 31557,
-                    "date_published": "2025-08-30T07:52:56.660988Z"
-                }
-            ]
-        },
-        {
             "pakku_id": "Xi0jXhl0mr458Iq6",
             "type": "MOD",
             "side": "BOTH",
@@ -5878,72 +5779,6 @@
                     ],
                     "size": 285003,
                     "date_published": "2025-11-22T07:39:11.367Z"
-                }
-            ]
-        },
-        {
-            "pakku_id": "09DmkCBgO3EvmZNL",
-            "pakku_links": [
-                "pB7ARGecP03UXpd6"
-            ],
-            "type": "MOD",
-            "side": "BOTH",
-            "slug": {
-                "curseforge": "dusty-decorations",
-                "modrinth": "dusty-decorations"
-            },
-            "name": {
-                "curseforge": "Dusty Decorations",
-                "modrinth": "Dusty Decorations"
-            },
-            "id": {
-                "curseforge": "843344",
-                "modrinth": "KgFOuaiZ"
-            },
-            "files": [
-                {
-                    "type": "curseforge",
-                    "file_name": "DustyDecorations_1.20.1Forge_V1.10.1.jar",
-                    "mc_versions": [
-                        "1.20.1"
-                    ],
-                    "loaders": [
-                        "forge"
-                    ],
-                    "release_type": "release",
-                    "url": "https://edge.forgecdn.net/files/7344/963/DustyDecorations_1.20.1Forge_V1.10.1.jar",
-                    "id": "7344963",
-                    "parent_id": "843344",
-                    "hashes": {
-                        "sha1": "afc0b4695c57750c7b40096db80fd79a0266e670",
-                        "md5": "3a45446e0fa61c6f8057deebe82302df"
-                    },
-                    "required_dependencies": [
-                        "388172"
-                    ],
-                    "size": 4163406,
-                    "date_published": "2025-12-17T17:41:21.863Z"
-                },
-                {
-                    "type": "modrinth",
-                    "file_name": "DustyDecorations_1.20.1Forge_V1.10.1.jar",
-                    "mc_versions": [
-                        "1.20.1"
-                    ],
-                    "loaders": [
-                        "forge"
-                    ],
-                    "release_type": "release",
-                    "url": "https://cdn.modrinth.com/data/KgFOuaiZ/versions/v0PMrpBt/DustyDecorations_1.20.1Forge_V1.10.1.jar",
-                    "id": "v0PMrpBt",
-                    "parent_id": "KgFOuaiZ",
-                    "hashes": {
-                        "sha512": "3199b092790b832a396908b3af7f8e8271563bd0a6ff8bcaa0ac000f6d472e575980185d6f791bf5877f387e4ad82d7ef5572f97449bd44c036ccecc0619d26b",
-                        "sha1": "afc0b4695c57750c7b40096db80fd79a0266e670"
-                    },
-                    "required_dependencies": [],
-                    "size": 4163406,
-                    "date_published": "2025-12-17T17:40:55.300166Z"
                 }
             ]
         },
@@ -7802,6 +7637,67 @@
             ]
         },
         {
+            "pakku_id": "0u3bjJRQ5wQPdDd5",
+            "type": "MOD",
+            "side": "BOTH",
+            "slug": {
+                "curseforge": "forgified-fabric-api",
+                "modrinth": "forgified-fabric-api"
+            },
+            "name": {
+                "curseforge": "Forgified Fabric API",
+                "modrinth": "Forgified Fabric API"
+            },
+            "id": {
+                "curseforge": "889079",
+                "modrinth": "Aqlf1Shp"
+            },
+            "files": [
+                {
+                    "type": "curseforge",
+                    "file_name": "fabric-api-0.92.6+1.11.14+1.20.1.jar",
+                    "mc_versions": [
+                        "1.20.1"
+                    ],
+                    "loaders": [
+                        "forge"
+                    ],
+                    "release_type": "release",
+                    "url": "https://edge.forgecdn.net/files/6885/853/fabric-api-0.92.6+1.11.14+1.20.1.jar",
+                    "id": "6885853",
+                    "parent_id": "889079",
+                    "hashes": {
+                        "sha1": "285c22b2567b9fdf98ef9808eceb5557de9611d3",
+                        "md5": "2859d401e221e94acf0b48c5f7efa50b"
+                    },
+                    "required_dependencies": [],
+                    "size": 3065813,
+                    "date_published": "2025-08-14T14:02:34.270Z"
+                },
+                {
+                    "type": "modrinth",
+                    "file_name": "fabric-api-0.92.6+1.11.14+1.20.1.jar",
+                    "mc_versions": [
+                        "1.20.1"
+                    ],
+                    "loaders": [
+                        "forge"
+                    ],
+                    "release_type": "release",
+                    "url": "https://cdn.modrinth.com/data/Aqlf1Shp/versions/XweDEycJ/fabric-api-0.92.6+1.11.14+1.20.1.jar",
+                    "id": "XweDEycJ",
+                    "parent_id": "Aqlf1Shp",
+                    "hashes": {
+                        "sha512": "3b84ea415d9255861bcbf78cfda3987b78aa452361bf44ba6a0223501a25ab5c5c55cb0eac6f460c88b8cec958f2b59211e488277c26e3432a08196f62049e7c",
+                        "sha1": "285c22b2567b9fdf98ef9808eceb5557de9611d3"
+                    },
+                    "required_dependencies": [],
+                    "size": 3065813,
+                    "date_published": "2025-08-14T14:02:39.244165Z"
+                }
+            ]
+        },
+        {
             "pakku_id": "5SQ0czDAOB19jrY9",
             "type": "MOD",
             "side": "BOTH",
@@ -9497,6 +9393,69 @@
                     "required_dependencies": [],
                     "size": 552486,
                     "date_published": "2025-08-06T14:19:52.700Z"
+                }
+            ]
+        },
+        {
+            "pakku_id": "cE8ek3JLJMrOPJAy",
+            "type": "MOD",
+            "side": "BOTH",
+            "slug": {
+                "curseforge": "kiwi",
+                "modrinth": "kiwi"
+            },
+            "name": {
+                "curseforge": "Kiwi 🥝 (Neo/Forge)",
+                "modrinth": "Kiwi 🥝"
+            },
+            "id": {
+                "curseforge": "303657",
+                "modrinth": "ufdDoWPd"
+            },
+            "files": [
+                {
+                    "type": "curseforge",
+                    "file_name": "Kiwi-1.20.1-Forge-11.10.0.jar",
+                    "mc_versions": [
+                        "1.20.1"
+                    ],
+                    "loaders": [
+                        "forge",
+                        "neoforge"
+                    ],
+                    "release_type": "beta",
+                    "url": "https://edge.forgecdn.net/files/7289/940/Kiwi-1.20.1-Forge-11.10.0.jar",
+                    "id": "7289940",
+                    "parent_id": "303657",
+                    "hashes": {
+                        "sha1": "08059768c1d7690dab557c73faeb3dcbad851d3c",
+                        "md5": "7487982d3545ce8c1d4eda737810803c"
+                    },
+                    "required_dependencies": [],
+                    "size": 1677003,
+                    "date_published": "2025-12-03T14:23:02.350Z"
+                },
+                {
+                    "type": "modrinth",
+                    "file_name": "Kiwi-1.20.1-Forge-11.10.0.jar",
+                    "mc_versions": [
+                        "1.20.1"
+                    ],
+                    "loaders": [
+                        "forge",
+                        "neoforge"
+                    ],
+                    "release_type": "beta",
+                    "url": "https://cdn.modrinth.com/data/ufdDoWPd/versions/hHZTjmFa/Kiwi-1.20.1-Forge-11.10.0.jar",
+                    "id": "hHZTjmFa",
+                    "parent_id": "ufdDoWPd",
+                    "hashes": {
+                        "sha512": "f6eee2ace7c6755cb39e3e861bab7021873049064a44d26d8378b72afcb7de1b14eb4a6b094954428e2e7c4cda90f12387408c676dcfbf07637875bf0aa6738c",
+                        "sha1": "08059768c1d7690dab557c73faeb3dcbad851d3c"
+                    },
+                    "required_dependencies": [],
+                    "size": 1677003,
+                    "date_published": "2025-12-03T14:23:31.642227Z"
                 }
             ]
         },
@@ -12110,6 +12069,67 @@
                     "required_dependencies": [],
                     "size": 642711,
                     "date_published": "2025-02-06T16:09:49.287555Z"
+                }
+            ]
+        },
+        {
+            "pakku_id": "k3rS80x2yodnu4p5",
+            "type": "MOD",
+            "side": "BOTH",
+            "slug": {
+                "curseforge": "perrys-decorations",
+                "modrinth": "perrys-decorations"
+            },
+            "name": {
+                "curseforge": "Perry´s Decorations",
+                "modrinth": "Perry´s Decorations"
+            },
+            "id": {
+                "curseforge": "1067293",
+                "modrinth": "mJU8hxj4"
+            },
+            "files": [
+                {
+                    "type": "curseforge",
+                    "file_name": "perrys_decorations-1.0.1-forge-1.20.1.jar",
+                    "mc_versions": [
+                        "1.20.1"
+                    ],
+                    "loaders": [
+                        "forge"
+                    ],
+                    "release_type": "release",
+                    "url": "https://edge.forgecdn.net/files/5547/796/perrys_decorations-1.0.1-forge-1.20.1.jar",
+                    "id": "5547796",
+                    "parent_id": "1067293",
+                    "hashes": {
+                        "sha1": "8e3fe3ee018902ebf4746078ebc638e609a9069f",
+                        "md5": "1a4c8fa909c66c3854c327b16129edd2"
+                    },
+                    "required_dependencies": [],
+                    "size": 266547,
+                    "date_published": "2024-07-20T07:08:17.577Z"
+                },
+                {
+                    "type": "modrinth",
+                    "file_name": "perrys_decorations-1.0.1-forge-1.20.1.jar",
+                    "mc_versions": [
+                        "1.20.1"
+                    ],
+                    "loaders": [
+                        "forge"
+                    ],
+                    "release_type": "release",
+                    "url": "https://cdn.modrinth.com/data/mJU8hxj4/versions/PBzodq6H/perrys_decorations-1.0.1-forge-1.20.1.jar",
+                    "id": "PBzodq6H",
+                    "parent_id": "mJU8hxj4",
+                    "hashes": {
+                        "sha512": "522cb870fefa45846e52b526d6d9d9411ac71e9128e2091282da10dd82140afbe0d2ec92a6915e8452d9cc5c67a062b8152508f811f2a026923735bff94adaf6",
+                        "sha1": "8e3fe3ee018902ebf4746078ebc638e609a9069f"
+                    },
+                    "required_dependencies": [],
+                    "size": 266547,
+                    "date_published": "2025-04-21T16:41:23.347403Z"
                 }
             ]
         },
@@ -17016,6 +17036,79 @@
             ]
         },
         {
+            "pakku_id": "tqSz9esyW7PkpOxi",
+            "pakku_links": [
+                "cE8ek3JLJMrOPJAy",
+                "0u3bjJRQ5wQPdDd5"
+            ],
+            "type": "MOD",
+            "side": "BOTH",
+            "slug": {
+                "curseforge": "xks-decoration",
+                "modrinth": "xks-decoration"
+            },
+            "name": {
+                "curseforge": "XK's Decoration",
+                "modrinth": "XK's Decoration"
+            },
+            "id": {
+                "curseforge": "497637",
+                "modrinth": "XlwMlNhH"
+            },
+            "files": [
+                {
+                    "type": "curseforge",
+                    "file_name": "XeKr's Decoration-1.20.1-Forge-0.9.3.jar",
+                    "mc_versions": [
+                        "1.20.1"
+                    ],
+                    "loaders": [
+                        "neoforge",
+                        "forge"
+                    ],
+                    "release_type": "release",
+                    "url": "https://edge.forgecdn.net/files/6970/328/XeKr's Decoration-1.20.1-Forge-0.9.3.jar",
+                    "id": "6970328",
+                    "parent_id": "497637",
+                    "hashes": {
+                        "sha1": "6b279cc5a3b9dd8bb32714d5064da5d092a62026",
+                        "md5": "5507c5e6b7cd7bdef6c2d88ef3dda439"
+                    },
+                    "required_dependencies": [
+                        "303657",
+                        "889079"
+                    ],
+                    "size": 2207693,
+                    "date_published": "2025-09-06T20:19:22.867Z"
+                },
+                {
+                    "type": "modrinth",
+                    "file_name": "XeKr's Decoration-1.20.1-Forge-0.9.3.jar",
+                    "mc_versions": [
+                        "1.20.1"
+                    ],
+                    "loaders": [
+                        "forge",
+                        "neoforge"
+                    ],
+                    "release_type": "release",
+                    "url": "https://cdn.modrinth.com/data/XlwMlNhH/versions/W17Y8pUb/XeKr's Decoration-1.20.1-Forge-0.9.3.jar",
+                    "id": "W17Y8pUb",
+                    "parent_id": "XlwMlNhH",
+                    "hashes": {
+                        "sha512": "d9c2d0dd892235ae8b92fd731994ef595fb411074dfa9dc5a4920a4ef882bc5cd710d5fb8d1d339e9f6b51f8be5e0e96b8b0cfe1deb2f47e6760e7fbf0727999",
+                        "sha1": "6b279cc5a3b9dd8bb32714d5064da5d092a62026"
+                    },
+                    "required_dependencies": [
+                        "Aqlf1Shp",
+                        "ufdDoWPd"
+                    ],
+                    "size": 2207693,
+                    "date_published": "2025-09-06T20:19:30.919354Z"
+                }
+            ]
+        },
+        {
             "pakku_id": "zonLLbYfp9ViO9i7",
             "type": "MOD",
             "side": "BOTH",
@@ -17300,47 +17393,6 @@
                     "required_dependencies": [],
                     "size": 1105891,
                     "date_published": "2025-03-23T19:12:55.655767Z"
-                }
-            ]
-        },
-        {
-            "pakku_id": "uCfpDMCVikKcYKOv",
-            "pakku_links": [
-                "AfKJHJE6CtrpRz0K"
-            ],
-            "type": "MOD",
-            "slug": {
-                "curseforge": "decostorage"
-            },
-            "name": {
-                "curseforge": "[STORAGE UPGRADES] Decorative Storage"
-            },
-            "id": {
-                "curseforge": "826577"
-            },
-            "files": [
-                {
-                    "type": "curseforge",
-                    "file_name": "deco_storage-3.3709-forge-1.20.1.jar",
-                    "mc_versions": [
-                        "1.20.1"
-                    ],
-                    "loaders": [
-                        "forge"
-                    ],
-                    "release_type": "release",
-                    "url": "https://edge.forgecdn.net/files/7028/751/deco_storage-3.3709-forge-1.20.1.jar",
-                    "id": "7028751",
-                    "parent_id": "826577",
-                    "hashes": {
-                        "sha1": "ea3f3760ec89ac8109a0cc58b37d986ac50a5273",
-                        "md5": "ddd70d9cc464d429486cc51e2c5d153d"
-                    },
-                    "required_dependencies": [
-                        "1247662"
-                    ],
-                    "size": 689121,
-                    "date_published": "2025-09-24T11:26:22.563Z"
                 }
             ]
         },

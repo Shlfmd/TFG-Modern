@@ -162,6 +162,27 @@ global.GTCEU_DISABLED_ITEMS = /** @type {const} */ ([
 
     "gtceu:molten_black_bronze_bucket",
     "gtceu:molten_bismuth_bronze_bucket",
+    "gtceu:damascus_steel_wire_cutter_head",
+    "gtceu:lv_damascus_steel_wire_cutter",
+    "gtceu:hv_damascus_steel_wire_cutter",
+    "gtceu:iv_damascus_steel_wire_cutter",
+    "gtceu:damascus_steel_butchery_knife_head",
+    "gtceu:damascus_steel_sword_head",
+    "gtceu:damascus_steel_screwdriver_tip",
+    "gtceu:damascus_steel_file_head",
+    "gtceu:damascus_steel_spade_head",
+    "gtceu:damascus_steel_mining_hammer_head",
+    "gtceu:damascus_steel_hoe_head",
+    "gtceu:damascus_steel_hammer_head",
+    "gtceu:damascus_steel_knife_head",
+    "gtceu:damascus_steel_pickaxe_head",
+    "gtceu:damascus_steel_axe_head",
+    "gtceu:damascus_steel_saw_head",
+    "gtceu:damascus_steel_shovel_head",
+    "gtceu:damascus_steel_scythe_head",
+
+    "gtceu:molten_black_bronze_bucket",
+    "gtceu:molten_bismuth_bronze_bucket",
 
     //armor
     "gtceu:bronze_helmet",
@@ -230,7 +251,12 @@ global.GTCEU_DISABLED_ITEMS = /** @type {const} */ ([
     "gtceu:thorium_block",
     "gtceu:thorium_plate",
     "gtceu:double_thorium_plate",
-    "gtceu:thorium_rod"
+    "gtceu:thorium_rod",
+    "gtceu:thorium_bucket",
+
+    // Replaced with our own
+    "gtceu:paracetamol_pill",
+    "gtceu:rad_away_pill"
 ]);
 //#endregion
 

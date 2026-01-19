@@ -18,6 +18,9 @@ const registerTFGItemTags = (event) => {
 	registerTFGMarsItemTags(event)
 	registerTFGVenusItemTags(event)
 
+	// TEMPORARY, REMOVE WHEN GURMAN FIXES THIS
+	event.remove('tfc:foods', 'tfc_gurman:havai_pizza')
+
 	//Circuit Stuff
 	event.add('tfg:components/uv_leds', 'tfg:uv_led')
 	event.add('tfg:components/uv_leds', 'tfg:smd_uv_led')
@@ -137,6 +140,8 @@ const registerTFGBlockTags = (event) => {
 //#region Fluids
 const registerTFGFluidTags = (event) => {
 
+	registerTFGPrimitiveFluidTags(event)
+
 	event.add('tfg:clean_water', 'minecraft:water')
 	event.add('tfg:clean_water', 'tfc:river_water')
 	event.add('tfg:clean_water', 'tfc:spring_water')
@@ -161,6 +166,11 @@ const registerTFGFluidTags = (event) => {
 	event.add('minecraft:water', 'tfg:light_stock')
 	event.add('tfc:drinkables', 'tfg:light_stock')
 	event.add('tfc:any_drinkables', 'tfg:light_stock')
+
+	event.add('tfc:drinkables', 'gtceu:ethanol')
+	event.add('tfc:any_drinkables', 'gtceu:ethanol')
+	event.add('tfc:drinkables', 'gtceu:methanol')
+	event.add('tfc:any_drinkables', 'gtceu:methanol')
 
 	global.BREATHABLE_COMPRESSED_AIRS.forEach(x => {
 		event.add('tfg:breathable_compressed_air', x)

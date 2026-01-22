@@ -251,25 +251,25 @@ jobs:
         uses: actions/upload-artifact@v4.6.2
         with:
           name: prerelease-${{ needs.info.outputs.project_full_name }}-curseforge
-          path: ./build/curseforge/${{ needs.info.outputs.project_full_name }}-curseforge.zip
+          path: ${{ needs.info.outputs.project_full_name }}-curseforge.zip
           if-no-files-found: error
       - name: Upload prerelease artifact modrinth
         uses: actions/upload-artifact@v4.6.2
         with:
           name: prerelease-${{ needs.info.outputs.project_full_name }}-modrinth
-          path: ./build/modrinth/${{ needs.info.outputs.project_full_name }}-modrinth.mrpack
+          path: ${{ needs.info.outputs.project_full_name }}-modrinth.mrpack
           if-no-files-found: warn
       - name: Upload prerelease artifact multimc
         uses: actions/upload-artifact@v4.6.2
         with:
           name: prerelease-${{ needs.info.outputs.project_full_name }}-multimc
-          path: ./build/multimc/${{ needs.info.outputs.project_full_name }}-multimc.zip
+          path: ${{ needs.info.outputs.project_full_name }}-multimc.zip
           if-no-files-found: error
       - name: Upload prerelease artifact server
         uses: actions/upload-artifact@v4.6.2
         with:
           name: prerelease-${{ needs.info.outputs.project_full_name }}-serverpack
-          path: ./build/serverpack/${{ needs.info.outputs.project_full_name }}-serverpack.zip
+          path: ${{ needs.info.outputs.project_full_name }}-serverpack.zip
           if-no-files-found: error
   release-github:
     name: Release to GitHub

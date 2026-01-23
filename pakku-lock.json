@@ -17774,7 +17774,7 @@
             ]
         },
         {
-            "pakku_id": "kFx1z4FEtrplsAKt",
+            "pakku_id": "9pncfSGrrtkxyCs5",
             "pakku_links": [
                 "jLc3CgLqmtwj96Qy",
                 "VmQcdbf4e2tKavrX"
@@ -17782,43 +17782,15 @@
             "type": "MOD",
             "side": "BOTH",
             "slug": {
-                "curseforge": "xks-decoration",
                 "modrinth": "xks-decoration"
             },
             "name": {
-                "curseforge": "XK's Decoration",
                 "modrinth": "XK's Decoration"
             },
             "id": {
-                "curseforge": "497637",
                 "modrinth": "XlwMlNhH"
             },
             "files": [
-                {
-                    "type": "curseforge",
-                    "file_name": "XeKr's Decoration-1.20.1-Forge-0.9.6.jar",
-                    "mc_versions": [
-                        "1.20.1"
-                    ],
-                    "loaders": [
-                        "forge",
-                        "neoforge"
-                    ],
-                    "release_type": "release",
-                    "url": "https://edge.forgecdn.net/files/7436/323/XeKr's Decoration-1.20.1-Forge-0.9.6.jar",
-                    "id": "7436323",
-                    "parent_id": "497637",
-                    "hashes": {
-                        "sha1": "d87e3fd028e5ec1b73e0368edc0d02077e205803",
-                        "md5": "f641346f14b89844ea1b34664c7604a7"
-                    },
-                    "required_dependencies": [
-                        "889079",
-                        "303657"
-                    ],
-                    "size": 2337020,
-                    "date_published": "2026-01-09T06:25:59.193Z"
-                },
                 {
                     "type": "modrinth",
                     "file_name": "XeKr's Decoration-1.20.1-Forge-0.9.6.jar",
@@ -17838,8 +17810,8 @@
                         "sha1": "d87e3fd028e5ec1b73e0368edc0d02077e205803"
                     },
                     "required_dependencies": [
-                        "ufdDoWPd",
-                        "Aqlf1Shp"
+                        "Aqlf1Shp",
+                        "ufdDoWPd"
                     ],
                     "size": 2337020,
                     "date_published": "2026-01-09T06:26:05.505028Z"

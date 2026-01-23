@@ -17774,24 +17774,20 @@
             ]
         },
         {
-            "pakku_id": "kFx1z4FEtrplsAKt",
+            "pakku_id": "GXx91M2RXfHo0W3u",
             "pakku_links": [
                 "jLc3CgLqmtwj96Qy",
                 "VmQcdbf4e2tKavrX"
             ],
             "type": "MOD",
-            "side": "BOTH",
             "slug": {
-                "curseforge": "xks-decoration",
-                "modrinth": "xks-decoration"
+                "curseforge": "xks-decoration"
             },
             "name": {
-                "curseforge": "XK's Decoration",
-                "modrinth": "XK's Decoration"
+                "curseforge": "XK's Decoration"
             },
             "id": {
-                "curseforge": "497637",
-                "modrinth": "XlwMlNhH"
+                "curseforge": "497637"
             },
             "files": [
                 {
@@ -17818,31 +17814,6 @@
                     ],
                     "size": 2337020,
                     "date_published": "2026-01-09T06:25:59.193Z"
-                },
-                {
-                    "type": "modrinth",
-                    "file_name": "XeKr's Decoration-1.20.1-Forge-0.9.6.jar",
-                    "mc_versions": [
-                        "1.20.1"
-                    ],
-                    "loaders": [
-                        "forge",
-                        "neoforge"
-                    ],
-                    "release_type": "beta",
-                    "url": "https://cdn.modrinth.com/data/XlwMlNhH/versions/S9PnL1Ti/XeKr's Decoration-1.20.1-Forge-0.9.6.jar",
-                    "id": "S9PnL1Ti",
-                    "parent_id": "XlwMlNhH",
-                    "hashes": {
-                        "sha512": "9e0d6d8e802d53cdca93b52b5d0af5b6cf7d4030c3a8a412f2d900ead776bf17eac5fd2df5f31ba8057e154c6b85b8bab63459fe7b9162925571bc4cae64e70e",
-                        "sha1": "d87e3fd028e5ec1b73e0368edc0d02077e205803"
-                    },
-                    "required_dependencies": [
-                        "ufdDoWPd",
-                        "Aqlf1Shp"
-                    ],
-                    "size": 2337020,
-                    "date_published": "2026-01-09T06:26:05.505028Z"
                 }
             ]
         },

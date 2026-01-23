@@ -158,7 +158,7 @@ jobs:
           sed -i -e "s#MINECRAFT_VERSION#${MINECRAFT_VERSION}#g" .pakku/server-overrides/forge-auto-install.txt
 
           sed -i \
-            's#"source":"https://api.github.com/repos/[^"]*/releases/latest"#"source":"https://api.github.com/repos/<ORG>/<REPO>/releases/latest"#' \
+            's|"source":"https://api.github.com/repos/[^"]*/releases/latest"|"source":"https://api.github.com/repos/Shlfmd/TFG-Modern/releases/latest"|g' \
             config/fancymenu/customization/gui_main_menu.txt
 
       - name: Cache pakku

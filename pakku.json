@@ -21,7 +21,7 @@
         "server-icon.png",
         "start_server.bat",
         "README.md"
-        
+
     ],
     "client_overrides": [
         "resourcepacks",
@@ -49,10 +49,16 @@
         "better-third-person": {
             "side": "CLIENT"
         },
+        "cull-leaves": {
+            "side": "CLIENT"
+        },
         "chunk-animator": {
             "side": "CLIENT"
         },
         "craftpresence": {
+            "side": "CLIENT"
+        },
+        "create-better-fps": {
             "side": "CLIENT"
         },
         "better-loading-screen": {
@@ -74,6 +80,9 @@
             "side": "CLIENT"
         },
         "farsight": {
+            "side": "CLIENT"
+        },
+        "tfc-season-notifier": {
             "side": "CLIENT"
         },
         "fps-reducer": {

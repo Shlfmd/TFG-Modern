@@ -4,6 +4,7 @@
     "overrides": [
         "mods",
         "config/bettercombat/fallback_compatibility.json",
+        "config/modernfix-mixins.properties",
         "kubejs/startup_scripts",
         "kubejs/assets"
     ],

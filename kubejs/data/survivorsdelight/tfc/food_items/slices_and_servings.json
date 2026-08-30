@@ -1,0 +1,10 @@
+{
+  "__comment__": "Disabled via an empty tag. Per-item nutrition profiles in tfgm/nutrition.js cover these foods.",
+  "ingredient": {
+    "tag": "tfgm:empty"
+  },
+  "hunger": 0,
+  "saturation": 0,
+  "decay_modifier": 1,
+  "type": "dynamic"
+}

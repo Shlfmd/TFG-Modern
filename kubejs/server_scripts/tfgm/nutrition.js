@@ -595,9 +595,8 @@ TFCEvents.data((event) => {
       if (EXTRADELIGHT_TFC_COVERED.has(key)) return;
       // ExtraDelight is too large to curate by hand, so its profiles are
       // derived from its own recipes by tools/gen-extradelight-nutrition.mjs.
-      const generated = GENERATED[key];
-      if (generated !== undefined) {
-        profile = { nutrients: generated.n, decay: generated.d };
+      if (GENERATED[key] !== undefined) {
+        profile = { nutrients: GENERATED[key].n, decay: GENERATED[key].d };
         generatedUsed++;
       } else {
         // No profile at all: keep the item's own hunger/saturation but give it

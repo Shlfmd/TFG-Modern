@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "food",
+  "ingredients": [
+    {
+      "item": "extradelight:salami_mix"
+    },
+    {
+      "item": "extradelight:salami_mix"
+    }
+  ],
+  "result": {
+    "item": "extradelight:unripe_salami_item"
+  }
+}

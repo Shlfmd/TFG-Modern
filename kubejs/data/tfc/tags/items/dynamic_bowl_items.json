@@ -1,6 +1,10 @@
 {
   "replace": false,
   "values": [
-    "#waterflasks:flasks"
+    "#waterflasks:flasks",
+    "tfc:ceramic/jug",
+    "#tfc:glass_bottles",
+    "firmalife:wine_glass",
+    "beneath:juicer"
   ]
 }

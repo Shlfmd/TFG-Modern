@@ -213,6 +213,12 @@ foods("farmersdelight", "glow_berry_custard", FD, 1.5);
 foods("farmersdelight", "sweet_berry_cookie", GF, 1.5);
 foods("farmersdelight", "honey_cookie", G, 1.5);
 foods("farmersdelight", "honey_glazed_ham", HONEY_GLAZED_HAM, 2.25);
+// Whole pies and cakes. The per-slice items are already covered above; the uncut
+// item used to come from farmersdelighttfc, whose definition is now disabled
+// (tools/gen-food-nutrition-overrides.mjs), so set the whole item here at roughly
+// its slice category.
+foods("farmersdelight", "apple_pie sweet_berry_cheesecake", [2, 1.5, 0, 0, 0.5], 1.5);
+foods("farmersdelight", "chocolate_pie", [2, 0, 0, 0, 1], 1.5);
 
 // Parent-scale equivalents for Farmer's Delight ingredients. Raw and cooked
 // cuts use the corresponding TFC meat values instead of the generic category
@@ -539,6 +545,20 @@ const EXTRADELIGHT_TFC_COVERED = new Set([
   "extradelight:pork_and_apples_feast",
 ]);
 
+// Farmer's Delight feast block items are placed, not eaten, and have no vanilla
+// FoodProperties, so this script cannot register them. farmersdelighttfc keeps
+// their definition (Survivor's Delight for gleaming_salad); skip them here so no
+// empty duplicate gets added. The other mod's copy is disabled by
+// tools/gen-food-nutrition-overrides.mjs.
+const FD_FEAST_BLOCKS = new Set([
+  "farmersdelight:honey_glazed_ham_block",
+  "farmersdelight:rice_roll_medley_block",
+  "farmersdelight:roast_chicken_block",
+  "farmersdelight:shepherds_pie_block",
+  "farmersdelight:stuffed_pumpkin_block",
+  "farmersdelight:gleaming_salad_block",
+]);
+
 const AQUACULTURE_FISH = new Set([
   "atlantic_cod",
   "blackfish",
@@ -586,6 +606,7 @@ TFCEvents.data((event) => {
     const path = String(id.getPath());
     const key = `${namespace}:${path}`;
     if (!FOOD_MODS.has(namespace)) return;
+    if (FD_FEAST_BLOCKS.has(key)) return;
     const nativeFood = entry.getValue().getFoodProperties();
     const fish = namespace === "aquaculture" && AQUACULTURE_FISH.has(path);
     if (nativeFood === null && !fish) return;

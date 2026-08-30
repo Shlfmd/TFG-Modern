@@ -1,0 +1,26 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "item": "tfc:food/melon_slice"
+    }
+  ],
+  "result": [
+    {
+      "count": 2,
+      "item": "extradelight:melon_chunks"
+    },
+    {
+      "item": "extradelight:melon_rind"
+    }
+  ],
+  "tool": [
+    {
+      "type": "farmersdelight:tool_action",
+      "action": "knife_dig"
+    },
+    {
+      "tag": "forge:tools/knives"
+    }
+  ]
+}

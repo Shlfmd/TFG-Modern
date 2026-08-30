@@ -6,15 +6,9 @@
 // numbers follow the ingredients. Read by tfgm/nutrition.js.
 // [grain, fruit, vegetables, protein, dairy], then decay modifier.
 
-// 497 of 502 ExtraDelight foods.
-// 104 resolve to no nutrients because nothing nutritive goes
+// 502 of 502 ExtraDelight foods.
+// 106 resolve to no nutrients because nothing nutritive goes
 // into them (candy is sugar and dye). They are marked EMPTY below.
-// 5 unresolved (no recipe, or every recipe grounds out empty):
-//   extradelight:bad_food
-//   extradelight:easter_egg
-//   extradelight:melon_rind
-//   extradelight:peanut_butter_jelly
-//   extradelight:salami_item
 
 global.TFGM_EXTRADELIGHT_NUTRITION = {
   "extradelight:aebleflaesk": { n: [0.38, 0.3, 1, 0.5, 0], d: 1.68 }, // cooking
@@ -36,6 +30,7 @@ global.TFGM_EXTRADELIGHT_NUTRITION = {
   "extradelight:bacon_cheeseburger": { n: [0, 0, 2.5, 1, 3], d: 1.67 }, // crafting_shapeless
   "extradelight:bacon_egg_cheese_sandwich": { n: [0, 0, 0, 4.11, 3.89], d: 2 }, // crafting_shapeless
   "extradelight:bacon_egg_pie_slice": { n: [0, 0, 0, 1.25, 0.19], d: 2.83 }, // cutting
+  "extradelight:bad_food": { n: [0, 0, 0, 0, 0], d: 2 }, // loot_only_empty EMPTY
   "extradelight:bacon_egg_sandwich": { n: [0, 0, 0, 4.5, 1.25], d: 2 }, // crafting_shapeless
   "extradelight:baked_alaska_serving": { n: [0, 0, 0, 0, 0], d: 2 }, // feast EMPTY
   "extradelight:baked_cod_serving": { n: [0, 0, 0.13, 0.25, 0], d: 1.7 }, // feast
@@ -181,6 +176,7 @@ global.TFGM_EXTRADELIGHT_NUTRITION = {
   "extradelight:dried_fruit": { n: [0, 0.61, 0, 0, 0], d: 2.28 }, // drying_rack
   "extradelight:dynamic_jam": { n: [0, 0, 3, 0, 0], d: 1 }, // dynamic_jam
   "extradelight:dynamic_toast": { n: [0.38, 0, 0, 0, 0.25], d: 1.5 }, // dynamic_toast
+  "extradelight:easter_egg": { n: [0, 0, 0, 0, 0], d: 2 }, // chocolate_empty EMPTY
   "extradelight:edamame": { n: [0, 0, 0, 0, 0], d: 2 }, // cooking EMPTY
   "extradelight:egg_in_the_basket": { n: [0.38, 0, 0, 1.5, 0.25], d: 1.5 }, // oven
   "extradelight:egg_salad": { n: [0, 0, 0, 3, 0.5], d: 2 }, // mixing
@@ -326,6 +322,7 @@ global.TFGM_EXTRADELIGHT_NUTRITION = {
   "extradelight:melon_gazpacho": { n: [0.1, 0.14, 0.88, 0, 0], d: 1.58 }, // mixing_bowl
   "extradelight:melon_layer_cake_slice": { n: [0.14, 0.29, 0, 0.21, 0.17], d: 2 }, // cutting
   "extradelight:melon_lime_glazed_chicken": { n: [0, 0.56, 0, 0, 0], d: 2.5 }, // cooking
+  "extradelight:melon_rind": { n: [0, 0.27, 0, 0, 0], d: 2.25 }, // melon_cutting
   "extradelight:melon_rind_stirfry": { n: [1, 0, 0.8, 0.13, 0], d: 1.15 }, // cooking
   "extradelight:meringue": { n: [0, 0, 0, 0, 0], d: 2 }, // oven EMPTY
   "extradelight:milk_chocolate_bar": { n: [0, 0, 0, 0, 0], d: 2 }, // chiller EMPTY
@@ -378,6 +375,7 @@ global.TFGM_EXTRADELIGHT_NUTRITION = {
   "extradelight:peanut_brittle": { n: [0, 0, 0, 0, 0.06], d: 2 }, // cooking
   "extradelight:peanut_butter_bottle": { n: [0, 0, 0, 0, 0], d: 2 }, // crafting_shapeless EMPTY
   "extradelight:peanut_butter_cup": { n: [0, 0, 0, 0, 0], d: 2 }, // chiller EMPTY
+  "extradelight:peanut_butter_jelly": { n: [1.5, 0, 0, 2, 0], d: 1.75 }, // pack_analogue
   "extradelight:peanuts": { n: [0, 0, 0, 0, 0], d: 2 }, // crafting_shapeless EMPTY
   "extradelight:peeled_ginger": { n: [0, 0, 0, 0, 0], d: 2 }, // cutting EMPTY
   "extradelight:penne_all_arrabbiata": { n: [0, 0, 0.75, 0, 0], d: 1 }, // cooking
@@ -441,6 +439,7 @@ global.TFGM_EXTRADELIGHT_NUTRITION = {
   "extradelight:roll": { n: [0, 0, 0, 0, 0], d: 2 }, // oven EMPTY
   "extradelight:rombosse": { n: [0, 1, 0, 0, 0.25], d: 1.7 }, // oven
   "extradelight:salad": { n: [0.03, 0, 0.45, 0.75, 0.78], d: 1.35 }, // feast
+  "extradelight:salami_item": { n: [0, 0, 0.12, 0.5, 0], d: 1.45 }, // salami_aging
   "extradelight:salami_mix": { n: [0, 0, 0.06, 0.25, 0], d: 1.45 }, // mixing_bowl
   "extradelight:salisbury_steak": { n: [0.25, 0, 0.13, 0.63, 0], d: 2.5 }, // feast
   "extradelight:sauerkraut_and_sausage": { n: [0, 0.5, 0.79, 0, 0], d: 1.27 }, // cooking

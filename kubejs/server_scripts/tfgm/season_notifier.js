@@ -26,6 +26,8 @@ const SEASON_COLORS = {
 const FADE_IN = 10;
 const STAY = 60;
 const FADE_OUT = 10;
+const MONTH_CHECK_INTERVAL = 20;
+let ticksUntilMonthCheck = 0;
 
 const TitlePacket = Java.loadClass(
   "net.minecraft.network.protocol.game.ClientboundSetTitleTextPacket",
@@ -64,6 +66,11 @@ function sendToPlayer(player, month) {
 }
 
 ServerEvents.tick((event) => {
+  if (ticksUntilMonthCheck > 0) {
+    ticksUntilMonthCheck--;
+    return;
+  }
+  ticksUntilMonthCheck = MONTH_CHECK_INTERVAL - 1;
   const month = currentMonth(event.server);
   const data = event.server.persistentData;
   if (

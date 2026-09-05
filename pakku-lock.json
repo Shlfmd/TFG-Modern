@@ -511,6 +511,75 @@
             ]
         },
         {
+            "pakku_id": "2EQa8nLXnBz2NwaX",
+            "type": "MOD",
+            "side": "SERVER",
+            "slug": {
+                "curseforge": "bluemap",
+                "modrinth": "bluemap"
+            },
+            "name": {
+                "curseforge": "BlueMap",
+                "modrinth": "BlueMap"
+            },
+            "id": {
+                "curseforge": "406463",
+                "modrinth": "swbUV1cr"
+            },
+            "files": [
+                {
+                    "type": "curseforge",
+                    "file_name": "bluemap-5.12-mc1.20-6-forge.jar",
+                    "mc_versions": [
+                        "1.20.2",
+                        "1.20.3",
+                        "1.20.1",
+                        "1.20",
+                        "1.20.4"
+                    ],
+                    "loaders": [
+                        "forge"
+                    ],
+                    "release_type": "release",
+                    "url": "https://edge.forgecdn.net/files/7057/487/bluemap-5.12-mc1.20-6-forge.jar",
+                    "id": "7057487",
+                    "parent_id": "406463",
+                    "hashes": {
+                        "sha1": "4f2a8960913a1673643a964e7561b2c6f55b3fc7",
+                        "md5": "0ffca4cee1caa952516f8440e4319e42"
+                    },
+                    "required_dependencies": [],
+                    "size": 6419227,
+                    "date_published": "2025-10-02T12:17:26.817Z"
+                },
+                {
+                    "type": "modrinth",
+                    "file_name": "bluemap-5.12-mc1.20-6-forge.jar",
+                    "mc_versions": [
+                        "1.20",
+                        "1.20.1",
+                        "1.20.2",
+                        "1.20.3",
+                        "1.20.4"
+                    ],
+                    "loaders": [
+                        "forge"
+                    ],
+                    "release_type": "release",
+                    "url": "https://cdn.modrinth.com/data/swbUV1cr/versions/kC7iYqja/bluemap-5.12-mc1.20-6-forge.jar",
+                    "id": "kC7iYqja",
+                    "parent_id": "swbUV1cr",
+                    "hashes": {
+                        "sha512": "e3c704792e6fc0243ecc3c7e68aab409b8475ed97b77b1cffa7feaf513e92df2b77af139e3c9a14a24eee85009bd855c7e0918d9d1d90024a98b419961054cce",
+                        "sha1": "4f2a8960913a1673643a964e7561b2c6f55b3fc7"
+                    },
+                    "required_dependencies": [],
+                    "size": 6419227,
+                    "date_published": "2025-10-02T12:16:31.621237Z"
+                }
+            ]
+        },
+        {
             "pakku_id": "SKUet33fTrXKUusP",
             "type": "MOD",
             "side": "BOTH",
@@ -1729,6 +1798,67 @@
                     "required_dependencies": [],
                     "size": 1774007,
                     "date_published": "2026-06-06T01:27:41.962070Z"
+                }
+            ]
+        },
+        {
+            "pakku_id": "4wbbwFFR5xesumIy",
+            "type": "MOD",
+            "side": "SERVER",
+            "slug": {
+                "curseforge": "dcintegration",
+                "modrinth": "dcintegration"
+            },
+            "name": {
+                "curseforge": "Discord Integration Forge",
+                "modrinth": "Discord Integration"
+            },
+            "id": {
+                "curseforge": "324952",
+                "modrinth": "rbJ7eS5V"
+            },
+            "files": [
+                {
+                    "type": "curseforge",
+                    "file_name": "dcintegration-forge-3.0.7.1-1.20.1.jar",
+                    "mc_versions": [
+                        "1.20.1"
+                    ],
+                    "loaders": [
+                        "forge"
+                    ],
+                    "release_type": "release",
+                    "url": "https://edge.forgecdn.net/files/5332/465/dcintegration-forge-3.0.7.1-1.20.1.jar",
+                    "id": "5332465",
+                    "parent_id": "324952",
+                    "hashes": {
+                        "sha1": "28d0562167f26d5caa71866255a163d68417edd2",
+                        "md5": "fc0cc2f0d9239f1c2dcf526559b9343a"
+                    },
+                    "required_dependencies": [],
+                    "size": 16358023,
+                    "date_published": "2024-05-10T12:05:16.543Z"
+                },
+                {
+                    "type": "modrinth",
+                    "file_name": "dcintegration-forge-3.0.7.1-1.20.1.jar",
+                    "mc_versions": [
+                        "1.20.1"
+                    ],
+                    "loaders": [
+                        "forge"
+                    ],
+                    "release_type": "release",
+                    "url": "https://cdn.modrinth.com/data/rbJ7eS5V/versions/ILJrSvYW/dcintegration-forge-3.0.7.1-1.20.1.jar",
+                    "id": "ILJrSvYW",
+                    "parent_id": "rbJ7eS5V",
+                    "hashes": {
+                        "sha512": "a4bcef59ff48059595fbcb50891b4561db8fdfe6e30ad4a6277eb0506bac519a3d69431aa691969d8894b93e5dc055b94cb0a9c09a1e3066eb5cbde411d2e483",
+                        "sha1": "28d0562167f26d5caa71866255a163d68417edd2"
+                    },
+                    "required_dependencies": [],
+                    "size": 16358023,
+                    "date_published": "2024-05-10T12:05:32.195976Z"
                 }
             ]
         },

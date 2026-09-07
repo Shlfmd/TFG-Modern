@@ -44,6 +44,9 @@
         },
         "extra-delight-unofficial-port": {
             "side": "BOTH"
+        },
+        "bluemap": {
+            "update_strategy": "NONE"
         }
     },
     "parent": {
